@@ -1,11 +1,11 @@
 import StudentCard from "./StudentCard";
 
-const StudentList = ({data}) => {
+const StudentList = ({data, list}) => {
     return (
         <div className="all-students">
             <h3>All Students</h3>
-            <p>Total Students: {data.length}</p>
-            <StudentCard data={data}/>
+            <p className="total">Total Students: <span>{data.length}</span></p>
+            <StudentCard data={data} list={list}/>
         </div>
     )
 }

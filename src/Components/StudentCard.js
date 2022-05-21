@@ -1,13 +1,13 @@
 
-const StudentCard = ({data}) => {
+const StudentCard = ({data, list}) => {
     return data.map(student =>{
         return (
             <div className="card" id={student.id}>
                 <img src={student.profilePhoto} alt={student.names.preferredName}/>
                 <p>{student.names.preferredName} {student.names.surname}</p>
                 <p>{student.username}</p>
-                <p>{student.dob}</p>
-                <p>Show More...</p>
+                <p className="birthday"><span>Birthday:</span> {student.dob}</p>
+                <button>Show More...</button>
             </div>
         )
     }) 
