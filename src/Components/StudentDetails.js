@@ -1,3 +1,6 @@
+import {FcCheckmark} from "react-icons/fc";
+import {ImCross} from "react-icons/im";
+
 const StudentDetails = ({student}) => {
     return (
         <div className="details">
@@ -10,10 +13,10 @@ const StudentDetails = ({student}) => {
             </section>
             <section>
                 <h4>Certifications</h4>
-                <p><span>Resume: </span>{student.certifications.resume}</p>
-                <p><span>LinkedIn: </span>1</p>
-                <p><span>Mock Interview: </span>1</p>
-                <p><span>GitHub: </span>1</p>
+                <p><span>Resume: </span>{student.certifications.resume ? <FcCheckmark/> : <ImCross/>}</p>
+                <p><span>LinkedIn: </span>{student.certifications.resume ? <FcCheckmark/> : <ImCross/>}</p>
+                <p><span>Mock Interview: </span>{student.certifications.resume ? <FcCheckmark/> : <ImCross/>}</p>
+                <p><span>GitHub: </span>{student.certifications.resume ? <FcCheckmark/> : <ImCross/>}</p>
             </section>
         </div>
     )
