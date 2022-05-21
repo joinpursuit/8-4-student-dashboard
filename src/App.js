@@ -1,8 +1,18 @@
+import React, { useState } from "react";
+import Data from "./data/data.json";
+import StudentList from "./Components/StudentList";
+import CohortList from "./Components/CohortList";
+import NavBar from "./Components/Navbar";
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <div className="dashboard">
+        <NavBar />
+        <CohortList />
+        <StudentList />
+      </div>
     </div>
   );
 }
