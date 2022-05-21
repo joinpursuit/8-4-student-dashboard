@@ -1,6 +1,13 @@
 const Cohorts = ({data, setList}) => {
-    let cohorts = data.map(person => person.cohort.cohortCode);
-    let noDups = [...new Set(cohorts)];
+    let noDups = [...new Set(data.map(person => person.cohort.cohortCode))];
+   
+    const handleClick = (e) => {
+        const {value} = e.target;
+        let newList = data.filter(student => {
+            return student.cohort.cohortCode === value;
+        })
+        setList(newList)
+    }
 
     return noDups.map(code => {
         let text = '';
@@ -13,18 +20,17 @@ const Cohorts = ({data, setList}) => {
                 text += code[i];
             }
         }
-
+    
         return (
             <div className="cohort">
                 <li>
-                   <button value={code}>{text} {numbers}</button>
+                   <button value={code} onClick={handleClick}>{text} {numbers}</button>
                 </li>
                 <section className="line"></section>
             </div>
         )
-
     })
-
 }
 
 export default Cohorts;
+
