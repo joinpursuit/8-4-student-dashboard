@@ -7,7 +7,7 @@ const StudentsList = ({
   totalAmountOfStudents,
   filterCohort
 }) => {
-    const [showText, setShowText] = useState(false);
+    
 
     let count = 0;
   return (
@@ -216,8 +216,7 @@ const StudentsList = ({
           return (
             <li>
               {" "}
-              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars} showText={showText}
-      setShowText={setShowText} certifications={certifications} notes={notes}/>
+              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars} certifications={certifications} notes={notes}/>
               {/* {cohort.cohortCode} */}
             </li>
             
@@ -419,7 +418,7 @@ const StudentsList = ({
           return (
             <li>
               {" "}
-              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars} showText={showText} setShowText={setShowText} certifications={certifications} notes={notes}/>
+              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars}  certifications={certifications} notes={notes}/>
               {/* showText={showText} setShowText={setShowText} */}
               {/* {cohort.cohortCode} */}
             </li>
