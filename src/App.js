@@ -7,6 +7,7 @@ import CohortList from "./Components/CohortList";
 
 const App = () => {
     const [totalAmountOfStudents, setTotalAmountOfStudents] = useState(datas.length);
+    // this counting part needs to change. //add it as it goes. 
     const [uniStudentCohort,setuniStudentCohort] = useState([]);
     const [filterCohort, setFilterCohort] = useState("All students");
 

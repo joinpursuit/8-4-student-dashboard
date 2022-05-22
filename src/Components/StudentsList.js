@@ -7,22 +7,34 @@ const StudentsList = ({
   totalAmountOfStudents,
   filterCohort,
 }) => {
+
+    let count = 0;
   return (
     <div>
-      <h2>All Students</h2>
+      <h2>{filterCohort}</h2>
       <p>Total Studetns: {totalAmountOfStudents}</p>
+      {/* how to get the number of student? */}
 
       {
-      datas.map(({ names, username, dob, profilePhoto, cohort }) => {
-       
+      datas.map(({ names, username, dob, profilePhoto, cohort, certifications,codewars }) => {
+       let onTrackToGraduate = "Not On Track to Graduate."
+
         let dobreturn = "";
 
        if (`${cohort.cohortCode.substring(0,cohort.cohortCode.length-4)} ${cohort.cohortCode.substring(cohort.cohortCode.length-4)}` === filterCohort) {//if these matches - print only these that match. 
-
+        count++;
+        //console.log(count);
+        setTotalAmountOfStudents(count);
         // console.log("apple");
+
+
+        if (certifications.resume === true && certifications.linkedin === true && certifications.github === true && certifications.mockInterview === true && codewars.current.total > 600 ) {
+            onTrackToGraduate = "On Track to Graduate."
+        }
 
         // console.log(filterCohort)
         for (let i = 0; i < dob.length; i++) {
+          //setTotalAmountOfStudents(Number(totalAmountOfStudents+1));
             if (cohort.cohortCode === filterCohort && dob[0] === "1" && dob[1] === "/" && dob[3] === "/") {
               //1/2/1997
               //if first is 1 - and second is / meaning its jan - && if dob[3] is / meaning its single day.
@@ -203,7 +215,7 @@ const StudentsList = ({
           return (
             <li>
               {" "}
-              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort}/>
+              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate}/>
               {/* {cohort.cohortCode} */}
             </li>
             
@@ -215,6 +227,15 @@ const StudentsList = ({
     } 
 
     else if  (filterCohort  === "All students") {
+        count = 250;
+        setTotalAmountOfStudents(count);
+
+
+        if (certifications.resume === true && certifications.linkedin === true && certifications.github === true && certifications.mockInterview === true && codewars.current.total > 600 ) {
+            onTrackToGraduate = "On Track to Graduate."
+        }
+
+
         for (let i = 0; i < dob.length; i++) {
             if (cohort.cohortCode === filterCohort && dob[0] === "1" && dob[1] === "/" && dob[3] === "/") {
               //1/2/1997
@@ -396,7 +417,7 @@ const StudentsList = ({
           return (
             <li>
               {" "}
-              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort}/>
+              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate}/>
               {/* {cohort.cohortCode} */}
             </li>
             
