@@ -20,7 +20,7 @@ const ClassList = ({ data, setCohort }) => {
       <h1>Choose a Class by Start Date</h1>
       <div>
         <div>
-          <strong id="All" onClick={handleCohort}>
+          <strong id="All Students" onClick={handleCohort}>
             All students
           </strong>
         </div>

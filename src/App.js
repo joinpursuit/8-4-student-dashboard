@@ -6,7 +6,7 @@ import ClassList from "./Components/Classlist";
 //pass literally everything through the app.js here. EVERYTHING
 
 function App() {
-  const [cohort, setCohort] = useState("All");
+  const [cohort, setCohort] = useState("All Students");
 
   return (
     <div>

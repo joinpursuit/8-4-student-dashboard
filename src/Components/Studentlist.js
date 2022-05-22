@@ -7,7 +7,7 @@ const StudentList = ({ data, cohort }) => {
   //const cohort = props.cohort;
 
   const students = data.filter((student) => {
-    if (cohort === "All") {
+    if (cohort === "All Students") {
       return true;
     }
     if (student.cohort.cohortCode === cohort) {
@@ -21,6 +21,7 @@ const StudentList = ({ data, cohort }) => {
   return (
     <div>
       <h2>{cohort}</h2>
+      <h4>Total Students: </h4>
       {students.map((data) => {
         return <Studentcard data={data} />;
       })}
