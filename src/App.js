@@ -1,19 +1,34 @@
-
+import React, {useState} from "react";
 import CardContainer from "./Components /CardContainer";
 import CohortList from "./Components /CohortList";
+import Form from "./Components /Form";
 const data = require("./data/data.json") 
 // console.log(data)
 
 
+
+
 function App() {
-  // const [students, setStudents] = useState(data)
+  const [cohort, setCohort] = useState(data)
+  const [heading, setHeading] = useState("All Students")
+  
   return (
     <div>
       <h1>Student Dashboard</h1>
-      <CohortList data={data}/>
-      <CardContainer data={data}/>
+      <CohortList data={data} setCohort={setCohort} cohort={cohort} setHeading={setHeading}/>
+      <CardContainer data={cohort} setCohort={setCohort} heading={heading}/>
+      <Form/>
     </div>
   );
 }
 
 export default App;
+
+
+
+//click button --> get value (semester)
+//pass value to getCohort(data, value)
+//update setCohort with value 
+
+
+//cohort list could map through data 
