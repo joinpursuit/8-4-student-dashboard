@@ -7,7 +7,6 @@ const App = () => {
   const [list, setList] = useState(data);
   const [title, setTitle] = useState('All Students');
   
-
   return (
     <div className="App">
       <h1>Student Dashboard</h1>

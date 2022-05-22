@@ -3,6 +3,7 @@ import {useState} from "react";
 
 const StudentCard = ({data}) => {
     const [show, setShow] = useState(false);
+    //useState for comments here for every student
 
     return (
         <div className="card" id={data.id}>

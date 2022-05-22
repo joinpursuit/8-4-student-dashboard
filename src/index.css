@@ -122,19 +122,19 @@
 }
 
 .comments{
-    grid-area: "f";
+    grid-area: f;
 }
 
 .section1{
-    grid-area: 'a';
+    grid-area: a;
 }
 
 .section2{
-    grid-area: 'b';
+    grid-area: b;
 }
 
 .section3{
-    grid-area: 'c';
+    grid-area: c;
 }
 
 .note{
@@ -152,7 +152,7 @@
 }
 
 .yellow{
-    color: gold;
+    color: rgb(226, 194, 17);
 }
 
 .red{
@@ -162,4 +162,5 @@
 .form{
     border: 1px solid black;
     padding: 10px;
+    margin-right: 15px;
 }
