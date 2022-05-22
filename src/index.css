@@ -1,0 +1,71 @@
+.grid {
+    display: grid;
+    grid-template-areas:
+        "t t t"
+        "c s s";
+}
+
+.title {
+    grid-area: t;
+    text-align: center;
+    background-color: rgb(77, 145, 77);
+    color: white;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+.cardContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    grid-area: s;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+
+img {
+    float: left;
+    height: 118px;
+    width: 118px;
+}
+
+.showMore {
+    padding: 20px;
+}
+
+.sCards {
+    border: 2px solid rgb(124, 187, 124);
+    padding: 10px;
+    margin: 10px;
+}
+
+.dash {
+    margin: 10px;
+}
+
+
+.cohortL {
+   text-align: left;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.cohortButton {
+   border:none;
+   background-color: white;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   text-align: left;
+}
+
+.cList{
+    list-style: none;
+    border-bottom: 2px solid black;
+    padding:20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.showB{
+    margin-left: 120px;
+}
+.count{
+    margin-left: 10px;
+}
