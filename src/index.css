@@ -21,6 +21,7 @@ header h1 {
 
 #classList {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left : 30px;
 }
 
 hr {
@@ -63,9 +64,11 @@ hr {
 }
 .codewars {
     grid-column: 1/2;
+    margin-right: 20px;
 }
 .scores {
-    grid-column : 2/3
+    grid-column : 2/3;
+    margin-right: 80px;
 }
 .certifications {
     grid-column : 3/4
