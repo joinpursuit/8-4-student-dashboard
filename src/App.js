@@ -1,22 +1,12 @@
-import Data from "./data/data.json";
+//import Data from "./data/data.json";
 import React from "react";
+import StudentList from "./Components/Studentlist";
 
 function App() {
   return (
     <div>
       <h1>Student Dashboard</h1>
-      {Data.map((data) => {
-        return (
-          <div>
-            {data.names.preferredName} {data.names.middleName} {data.names.surname}
-            <br></br>
-            {data.username}
-            <br></br>
-            {data.dob}
-            <p></p>
-          </div>
-        )
-      })}
+      <StudentList/>
     </div>
   );
 }
