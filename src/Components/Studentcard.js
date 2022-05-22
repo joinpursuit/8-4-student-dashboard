@@ -29,7 +29,7 @@ const Studentcard = ({ data }) => {
             </strong>
             <div className="infoBox">
               <div className="codewars">
-                <h2>Codwars</h2>
+                <h2>Codwars:</h2>
                 <p>Current Total: {data.codewars.current.total}</p>
                 <p>Last Week: {data.codewars.current.lastWeek}</p>
                 <p>Goal: {data.codewars.goal.total}</p>
@@ -56,6 +56,11 @@ const Studentcard = ({ data }) => {
                 <p>GitHub: {data.certifications.mockInterview.toString()}</p>
               </div>
             </div>
+
+            <div>
+                
+            </div>
+
           </div>
         )}
       </div>

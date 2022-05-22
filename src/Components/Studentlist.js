@@ -19,9 +19,9 @@ const StudentList = ({ data, cohort }) => {
 
   console.log(students);
   return (
-    <div>
+    <div className="studentList">
       <h2>{cohort}</h2>
-      <h4>Total Students: </h4>
+      <h4>Total Students: {students.length} </h4>
       {students.map((data) => {
         return <Studentcard data={data} />;
       })}
