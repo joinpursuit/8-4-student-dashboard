@@ -1,4 +1,5 @@
 import React from "react";
+import Studentcard from "./Studentcard";
 //import Data from "../data/data.json";
 
 const StudentList = ({ data, cohort }) => {
@@ -19,19 +20,9 @@ const StudentList = ({ data, cohort }) => {
   console.log(students);
   return (
     <div>
+      <h2>{cohort}</h2>
       {students.map((data) => {
-        return (
-          <div id={data.id} key={data.id}>
-            {data.names.preferredName} {data.names.middleName}{" "}
-            {data.names.surname}
-            <br></br>
-            {data.username}
-            <br></br>
-            {data.dob}
-            <br></br>
-            <img src={data.profilePhoto} alt="student"></img>
-          </div>
-        );
+        return <Studentcard data={data} />;
       })}
     </div>
   );
