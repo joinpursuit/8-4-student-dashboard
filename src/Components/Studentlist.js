@@ -1,12 +1,27 @@
 import React from "react";
-import Data from "../data/data.json";
+//import Data from "../data/data.json";
 
-const StudentList = () => {
+const StudentList = ({ data, cohort }) => {
+  //const data = props.data;
+  //const cohort = props.cohort;
+
+  const students = data.filter((student) => {
+    if (cohort === "All") {
+      return true;
+    }
+    if (student.cohort.cohortCode === cohort) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  console.log(students);
   return (
     <div>
-      {Data.map((data) => {
+      {students.map((data) => {
         return (
-          <div>
+          <div id={data.id} key={data.id}>
             {data.names.preferredName} {data.names.middleName}{" "}
             {data.names.surname}
             <br></br>
@@ -14,8 +29,7 @@ const StudentList = () => {
             <br></br>
             {data.dob}
             <br></br>
-            <img src={data.profilePhoto} alt="picture"></img>
-            <p></p>
+            <img src={data.profilePhoto} alt="student"></img>
           </div>
         );
       })}

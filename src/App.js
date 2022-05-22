@@ -1,12 +1,18 @@
-//import Data from "./data/data.json";
-import React from "react";
+import Data from "./data/data.json";
+import React, { useState } from "react";
 import StudentList from "./Components/Studentlist";
+import ClassList from "./Components/Classlist";
+
+//pass literally everything through the app.js here. EVERYTHING
 
 function App() {
+  const [cohort, setCohort] = useState("All");
+
   return (
     <div>
       <h1>Student Dashboard</h1>
-      <StudentList/>
+      <StudentList cohort={cohort} data={Data} />
+      <ClassList setCohort={setCohort} data={Data} />
     </div>
   );
 }
