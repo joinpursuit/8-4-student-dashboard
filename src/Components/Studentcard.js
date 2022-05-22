@@ -14,17 +14,17 @@ const Studentcard = ({ data }) => {
         {data.dob}
         <br></br>
         {!moreInfo ? (
-          <strong onClick={handleInfo}>Show more...</strong>
+          <strong onClick={handleInfo} className="hoverPointer">Show more...</strong>
         ) : (
           <div>
-            <strong onClick={handleInfo}>Show less...</strong>
+            <strong onClick={handleInfo} className="hoverPointer">Show less...</strong>
             <div className="infoBox">
               <div className="codewars">
                 <h2>Codwars:</h2>
                 <p>Current Total: {data.codewars.current.total}</p>
                 <p>Last Week: {data.codewars.current.lastWeek}</p>
                 <p>Goal: {data.codewars.goal.total}</p>
-                <p>Precent of Goal Achieved: MATH TO COME</p>
+                <p>Precent of Goal Achieved: {Math.round((data.codewars.current.total / data.codewars.goal.total) * 100)}%</p>
               </div>
               <div className="scores">
                 <h2>Scores</h2>

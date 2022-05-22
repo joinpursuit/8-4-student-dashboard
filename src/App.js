@@ -9,11 +9,15 @@ function App() {
   const [cohort, setCohort] = useState("All Students");
 
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-      <StudentList cohort={cohort} data={Data} />
-      <ClassList setCohort={setCohort} data={Data} />
-    </div>
+    <>
+      <header>
+        <h1>Student Dashboard</h1>
+      </header>
+      <div id="container">
+        <ClassList setCohort={setCohort} data={Data} />
+        <StudentList cohort={cohort} data={Data} />
+      </div>
+    </>
   );
 }
 

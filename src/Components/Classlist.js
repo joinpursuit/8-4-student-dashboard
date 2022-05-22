@@ -20,14 +20,14 @@ const ClassList = ({ data, setCohort }) => {
       <h1>Choose a Class by Start Date</h1>
       <div>
         <div>
-          <strong id="All Students" onClick={handleCohort}>
+          <strong id="All Students" onClick={handleCohort} className="hoverPointer">
             All students
           </strong>
         </div>
         {cohortList.map((cohort) => {
           return (
             <div key={cohort}>
-              <strong id={cohort} onClick={handleCohort}>
+              <strong id={cohort} onClick={handleCohort} className="hoverPointer">
                 {cohort}
               </strong>
             </div>
