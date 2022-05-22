@@ -11,8 +11,11 @@ const StudentsList = ({
       <h2>All Students</h2>
       <p>Total Studetns: {totalAmountOfStudents}</p>
 
-      {datas.map(({ names, username, dob, profilePhoto }) => {
+      {
+      datas.map(({ names, username, dob, profilePhoto, cohort }) => {
         let dobreturn = "";
+
+
         for (let i = 0; i < dob.length; i++) {
           if (dob[0] === "1" && dob[1] === "/" && dob[3] === "/") {
             //1/2/1997
@@ -189,14 +192,24 @@ const StudentsList = ({
             //----------
           }
         }
+
+
+
+
         return (
           <li>
             {" "}
-            <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn}/>
+            <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort}/>
+            {/* {cohort.cohortCode} */}
           </li>
+          
           //with the values I need
         );
-      })}
+
+
+      })
+      
+      }
     </div>
   );
 };
