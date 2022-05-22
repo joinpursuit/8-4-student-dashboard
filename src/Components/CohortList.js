@@ -1,15 +1,18 @@
 import Cohorts from "./Cohorts";
 
-const CohortList = ({data, setList}) => {
+const CohortList = ({data, setList, setTitle}) => {
     return (
         <div className="cohorts">
             <h3>Choose a Class by Start Date</h3>
             <ul>
                 <li>
-                    <button value='students' onClick={() => setList(data)}>All Students</button>
+                    <button onClick={() => {
+                        setList(data); 
+                        setTitle('All Students');
+                    }}>All Students</button>
                 </li>
                 <section className="line"></section>
-                <Cohorts data={data} setList={setList}/>
+                <Cohorts data={data} setList={setList} setTitle={setTitle}/>
             </ul>
         </div>
     )

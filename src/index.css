@@ -79,6 +79,10 @@
     font-weight: bold;
 }
 
+.cohorts button:hover{
+    color: rgb(100, 142, 100);
+}
+
 .cohort{
     list-style: none;
 }
@@ -87,6 +91,10 @@
     background: none;
     border: none;
     padding: 10px;
+}
+
+.cohort button:hover{
+    color: rgb(100, 142, 100);
 }
 
 .line{
@@ -102,6 +110,18 @@
     padding-left: 10px;
 }
 
-.details span{
+.span{
     color: rgb(100, 142, 100);
+}
+
+.green{
+    color: rgb(100, 142, 100)
+}
+
+.yellow{
+    color: gold;
+}
+
+.red{
+    color: darkred;
 }
