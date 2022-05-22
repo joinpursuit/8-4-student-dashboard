@@ -1,23 +1,7 @@
 const Cohorts = ({data, setList, setTitle}) => {
     let noDups = [...new Set(data.map(person => person.cohort.cohortCode))];
 
-    // const options = {month: 'long', year: 'numeric'}
-
-    // let formattedCohorts = new Intl.DateTimeFormat('en-US', options).format('Fall2026')
-
-    // console.log(formattedCohorts)
-   
-    const handleClick = (e) => {
-        const {value} = e.target;
-        let newList = data.filter(student => {
-            return student.cohort.cohortCode === value;
-        })
-
-        setList(newList);
-        setTitle(value);
-    }
-
-    return noDups.map(code => {
+    const formatCode = (code) =>{
         let text = '';
         let numbers = '';
         
@@ -28,11 +12,25 @@ const Cohorts = ({data, setList, setTitle}) => {
                 text += code[i];
             }
         }
-    
+        return text + ' ' + numbers;
+    }
+
+   
+    const handleClick = (e) => {
+        const {value} = e.target;
+        let newList = data.filter(student => {
+            return student.cohort.cohortCode === value;
+        })
+
+        setList(newList);
+        setTitle(formatCode(value));
+    }
+
+    return noDups.map(code => {
         return (
             <div className="cohort">
                 <li>
-                   <button value={code} onClick={handleClick}>{text + ' ' + numbers}</button>
+                   <button value={code} onClick={handleClick}>{formatCode(code)}</button>
                 </li>
                 <section className="line"></section>
             </div>
