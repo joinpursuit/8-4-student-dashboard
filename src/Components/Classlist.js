@@ -16,20 +16,22 @@ const ClassList = ({ data, setCohort }) => {
   const handleCohort = (e) => setCohort(e.target.id);
 
   return (
-    <div>
+    <div id="classList">
       <h1>Choose a Class by Start Date</h1>
       <div>
         <div>
-          <strong id="All Students" onClick={handleCohort} className="hoverPointer">
+          <h3 id="All Students" onClick={handleCohort} className="hoverPointer">
             All students
-          </strong>
+          </h3>
+          <hr></hr>
         </div>
         {cohortList.map((cohort) => {
           return (
             <div key={cohort}>
-              <strong id={cohort} onClick={handleCohort} className="hoverPointer">
+              <h3 id={cohort} onClick={handleCohort} className="hoverPointer">
                 {cohort}
-              </strong>
+              </h3>
+              <hr></hr>
             </div>
           );
         })}
