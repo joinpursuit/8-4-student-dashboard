@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import CohortSingle from "./CohortSingle";
 
-const CohortList = ({datas,names,username,dob,profilePhoto, dobreturn, cohort,uniStudentCohort, setuniStudentCohort }) => { 
+const CohortList = ({datas,names,username,dob,profilePhoto, dobreturn, cohort,uniStudentCohort, setuniStudentCohort,filterCohort,setFilterCohort }) => { 
 //should set up the array - of uniCohort. 
 
 let arr = [];
 let newarr = [];
 
 const loopCohortUniList = () => {
-
-for (let i = 0; i< datas.length; i++){
-    if (arr.includes(datas[i].cohort.cohortCode) === false )
-    arr.push(datas[i].cohort.cohortCode);
+    for (let i = 0; i< datas.length; i++){
+      if (arr.includes(datas[i].cohort.cohortCode) === false )
+            arr.push(datas[i].cohort.cohortCode);
+    }
 }
 
 
-//console.log(arr)
+//maybe needs a function here that CHANGES the filter when a COHORT is CLICKED. 
+const changeFilter = (e) => {
+    setFilterCohort(e.target.textContent);
+// console.log("I clicked on it")
 }
+
+
+
 
 
 return (
@@ -24,7 +30,7 @@ return (
 <h2>Choose a Class by Start Date</h2>
 
 <ul>
-<li>All students</li>    
+<li onClick={changeFilter}>All students</li>    
 
 {loopCohortUniList()}
 
@@ -65,23 +71,6 @@ return (
         }
             // return (<li>{`${cohortCode.substring(0,cohortCode.length-4)} ${cohortCode.substring(cohortCode.length-4)}`}</li>)
         
-
-
-
-
-
-
-
-
-    // }
-
-   //cohortCode
-
-    //     //console.log(cohort.cohortCode)
-    //     // <CohortSingle cohortUniList={cohortUniList}/>
-        
-    //    )
-    //console.log(newarr)
    })
 
 }
@@ -91,7 +80,7 @@ return (
 //  {console.log(newarr[0])}
   newarr.map((cohortCode) => {
 return (
-    <li>{(cohortCode)}</li>
+    <li onClick={changeFilter} >{(cohortCode)}</li>
 
 )
   
