@@ -5,8 +5,9 @@ const StudentsList = ({
   datas,
   setTotalAmountOfStudents,
   totalAmountOfStudents,
-  filterCohort,
+  filterCohort
 }) => {
+    const [showText, setShowText] = useState(false);
 
     let count = 0;
   return (
@@ -16,7 +17,7 @@ const StudentsList = ({
       {/* how to get the number of student? */}
 
       {
-      datas.map(({ names, username, dob, profilePhoto, cohort, certifications,codewars }) => {
+      datas.map(({ names, username, dob, profilePhoto, cohort, certifications,codewars,notes }) => {
        let onTrackToGraduate = "Not On Track to Graduate."
 
         let dobreturn = "";
@@ -215,7 +216,8 @@ const StudentsList = ({
           return (
             <li>
               {" "}
-              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate}/>
+              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars} showText={showText}
+      setShowText={setShowText} certifications={certifications} notes={notes}/>
               {/* {cohort.cohortCode} */}
             </li>
             
@@ -417,7 +419,8 @@ const StudentsList = ({
           return (
             <li>
               {" "}
-              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate}/>
+              <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars} showText={showText} setShowText={setShowText} certifications={certifications} notes={notes}/>
+              {/* showText={showText} setShowText={setShowText} */}
               {/* {cohort.cohortCode} */}
             </li>
             
