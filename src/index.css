@@ -1,0 +1,96 @@
+
+#root {
+    display: grid;
+    grid-template-columns: .5fr 1.5fr;
+    background-color: wheat;
+    font-family: 'Lato', sans-serif; 
+    font-weight: normal
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    color: rgb(23, 150, 29);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.header {
+    width:100%;
+    height:100px;
+    text-align: center;
+    border: solid black;
+    background-color: rgb(197, 83, 72);
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+.class-categories-section {
+    width:auto;
+    padding: 1ch;
+}
+.student-cards-section {
+    width: auto;
+    /* padding-left: 1rem; */
+}
+
+.class-categories-section ul {
+    font-size: large;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.class-categories-section ul:hover {
+    color: red;
+}
+
+.class-categories-section ul:active {
+    color: yellow;
+}
+
+.student-card-container {
+    display: grid;
+}
+
+.student-card-container div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr .5fr;
+    border: solid black;
+    height:fit-content;
+    padding-left: 1rem;
+}
+
+.student-card-container section {
+    padding-left: 1rem;
+    text-align: left;
+}
+.student-card-container img {
+    width: 100px;
+    text-align: left;
+}
+
+/* .hiddenStudentData {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    width:fit-content;
+    bottom:0ch;
+    left: 0ch; */
+
+    /* grid-template-areas: "b"; 
+} */
+
+.read-or-hide {
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+span {
+    font-weight: bold;
+}
+
