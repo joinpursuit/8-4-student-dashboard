@@ -1,9 +1,25 @@
 import React, { useEffect, useState } from "react";
+//import {v4 as uuidv4} from 'uuid';
 
 const Studentcard = ({ data }) => {
+  
   const [moreInfo, setMoreInfo] = useState(false);
   const handleInfo = () => setMoreInfo((prev) => !prev);
   const [graduate, setGraduate] = useState("");
+  const [notes, setNotes] = useState(data.notes);
+
+  const handleNotes = (e) => {
+    e.preventDefault();
+    setNotes((prevNotes) => {
+      return [
+        ...prevNotes,
+        {
+          commenter: e.target.commenter.value,
+          comment: e.target.comment.value,
+        },
+      ];
+    });
+  };
 
   useEffect(() => {
     if (
@@ -17,11 +33,11 @@ const Studentcard = ({ data }) => {
     } else {
       setGraduate(false);
     }
-  }, [data]); // <--- dependency causes useEffect to be called again. Otherwise it works 
-              // on load, but not if another cohort is chosen (mostly)
+  }, [data]); // <--- dependency causes useEffect to be called again. Otherwise it works
+  // on load, but not if another cohort is chosen (mostly)
 
   return (
-    <div className="card" id={data.id} key={data.id}>
+    <div className="card" id={data.id}>
       <div className="photo">
         <img className="picture" src={data.profilePhoto} alt="student"></img>
       </div>
@@ -73,7 +89,27 @@ const Studentcard = ({ data }) => {
                 <p>GitHub: {data.certifications.mockInterview.toString()}</p>
               </div>
             </div>
-            <form>This is where the 1-on-1 info goes</form>
+            <section className="notes">
+              <h4>1-on-1 Notes</h4>
+              <form className="addComment" onSubmit={handleNotes}>
+                <label htmlFor="commenter">Commenter Name </label>
+                <input type="text" name="commenter" id="commenter"></input>
+                <br></br>
+                <label htmlFor="comment">Comment </label>
+                <input type="text" name="comment" id="comment"></input>
+                <input type="submit"></input>
+              </form>
+              <div>
+                {notes &&
+                  notes.map((note) => {
+                    return (
+                      <p>
+                        {note.commenter} says {note.comment}
+                      </p>
+                    );
+                  })}
+              </div>
+            </section>
           </div>
         )}
       </div>
