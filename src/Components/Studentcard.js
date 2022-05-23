@@ -5,7 +5,6 @@ const Studentcard = ({ data }) => {
   const bday = new Date(data.dob);
   //console.log(new Intl.DateTimeFormat('en-US', {dateStyle:'long'}).format(bday));
 
-
   const [moreInfo, setMoreInfo] = useState(false);
   const handleInfo = () => setMoreInfo((prev) => !prev);
   const [graduate, setGraduate] = useState("");
@@ -49,7 +48,8 @@ const Studentcard = ({ data }) => {
         <br></br>
         {data.username}
         <br></br>
-        Birthday : {new Intl.DateTimeFormat('en-US', {dateStyle:'long'}).format(bday)}
+        Birthday :{" "}
+        {new Intl.DateTimeFormat("en-US", { dateStyle: "long" }).format(bday)}
         <br></br>
         {graduate && <div className="readyToGrad">On Track to Graduate</div>}
       </div>
@@ -86,10 +86,10 @@ const Studentcard = ({ data }) => {
               </div>
               <div className="certifications">
                 <h2>Certifications</h2>
-                <p>Resume: {data.certifications.resume.toString()}</p>
-                <p>LinkedIn: {data.certifications.linkedin.toString()}</p>
-                <p>Mock Interview: {data.certifications.github.toString()}</p>
-                <p>GitHub: {data.certifications.mockInterview.toString()}</p>
+                <p>Resume: {data.certifications.resume ? "✅" : "❌"}</p>
+                <p>LinkedIn: {data.certifications.linkedin ? "✅" : "❌"}</p>
+                <p>Mock Interview: {data.certifications.github ? "✅" : "❌"}</p>
+                <p>GitHub: {data.certifications.mockInterview ? "✅" : "❌"}</p>
               </div>
             </div>
             <section className="notes">

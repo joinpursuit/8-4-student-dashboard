@@ -45,6 +45,8 @@ hr {
   color: green;
   grid-row: 1/2;
   grid-column: 3/4;
+  font-size: large;
+  font-weight: bold;
 }
 .photo {
   grid-row: 1/2;
