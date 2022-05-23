@@ -1,0 +1,41 @@
+/** @format */
+
+body {
+	margin: 20px;
+}
+
+.student-card {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	border: 2px solid green;
+	width: 75%;
+}
+
+.student-list {
+	display: grid;
+	gap: 10px;
+}
+
+.student-card-image {
+	display: grid;
+	margin: 20px;
+}
+
+.student-info {
+	display: grid;
+
+	padding-top: 10px;
+}
+
+.birthday {
+	color: olivedrab;
+}
+
+ul {
+	list-style-type: none;
+	width: 30%;
+}
+
+li {
+	border-bottom: 2px solid green;
+}
