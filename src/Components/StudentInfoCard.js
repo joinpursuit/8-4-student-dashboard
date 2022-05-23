@@ -108,8 +108,10 @@ return (
 
 return (
     //need to make it into another conpoent - where it shows the 4 things - then this coponment bring it out base on HOW MANY STUDENT. 
-    <>
+    <div className="StudentList">
     <img src = {profilePhoto}/>
+    
+    <div className="StudentListText">
     <p><strong>{names.preferredName} {names.middleName[0]}. {names.surname}</strong></p>
     <p>{username}</p>
     <p>Birthday: {dobreturn}</p>
@@ -132,7 +134,9 @@ return (
     {/* <li>Birthday:{dob}</li> */}
     
     {/* graduate is written ere.  */}
-    </>
+
+    </div>
+       </div>
 //maybe MAKE A FUNCTION THAT DOES THE BIRTHDAY CALUCATION. INTO STRING. 
 )
 }

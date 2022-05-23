@@ -26,7 +26,7 @@ const changeFilter = (e) => {
 
 
 return (
-<div>
+<div className= "Cohortlist">
 <h2>Choose a Class by Start Date</h2>
 
 <ul>

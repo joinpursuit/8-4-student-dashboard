@@ -214,11 +214,11 @@ const StudentsList = ({
        
 
           return (
-            <li>
+            <>
               {" "}
               <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars} certifications={certifications} notes={notes}/>
               {/* {cohort.cohortCode} */}
-            </li>
+            </>
             
             //with the values I need
           );
@@ -416,12 +416,12 @@ const StudentsList = ({
        
 
           return (
-            <li>
+            <>
               {" "}
               <StudentInfoCard names={names} profilePhoto={profilePhoto} username={username} dobreturn={dobreturn} cohort={cohort} filterCohort={filterCohort} onTrackToGraduate={onTrackToGraduate} codewars={codewars}  certifications={certifications} notes={notes}/>
               {/* showText={showText} setShowText={setShowText} */}
               {/* {cohort.cohortCode} */}
-            </li>
+            </>
             
             //with the values I need
           );
