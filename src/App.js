@@ -15,7 +15,7 @@ function App() {
       </header>
       <div id="container">
         <ClassList setCohort={setCohort} data={Data} />
-        <StudentList cohort={cohort} data={Data} />
+        <StudentList cohort={cohort} data={Data}/>
       </div>
     </>
   );

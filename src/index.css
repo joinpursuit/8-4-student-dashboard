@@ -41,6 +41,11 @@ hr {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px
 }
+.readyToGrad{
+    color: green;
+    grid-row:1/2;
+    grid-column:3/4;
+}
 .photo {
     grid-row: 1/2;
     grid-column:1/2

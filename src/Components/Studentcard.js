@@ -1,8 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Studentcard = ({ data }) => {
   const [moreInfo, setMoreInfo] = useState(false);
   const handleInfo = () => setMoreInfo((prev) => !prev);
+  const [graduate, setGraduate] = useState("");
+
+  useEffect(() => {
+    if (
+      data.certifications.resume &&
+      data.certifications.linkedin &&
+      data.certifications.github &&
+      data.certifications.mockInterview &&
+      data.codewars.current.total > 600
+    ) {
+      setGraduate(true);
+    } else {
+      setGraduate(false);
+    }
+  }, [data]); // <--- dependency causes useEffect to be called again. Otherwise it works 
+              // on load, but not if another cohort is chosen (mostly)
 
   return (
     <div className="card" id={data.id} key={data.id}>
@@ -14,8 +30,9 @@ const Studentcard = ({ data }) => {
         <br></br>
         {data.username}
         <br></br>
-        {data.dob}
+        Birthday : {data.dob}
         <br></br>
+        {graduate && <div className="readyToGrad">On Track to Graduate</div>}
       </div>
       <div className="moreInfo">
         {!moreInfo ? (
@@ -56,11 +73,7 @@ const Studentcard = ({ data }) => {
                 <p>GitHub: {data.certifications.mockInterview.toString()}</p>
               </div>
             </div>
-
-            <div>
-
-            </div>
-
+            <form>This is where the 1-on-1 info goes</form>
           </div>
         )}
       </div>
