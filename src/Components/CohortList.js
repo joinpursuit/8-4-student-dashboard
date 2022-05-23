@@ -1,28 +1,36 @@
 import React from "react";
-import data from "../data/data.json"
-import Cohort from "../Components/Cohort"
 
-const CohortList = () => {
 
-        // noDuplicates = []
-        // data.forEach((element) => {
-        //     if(noDuplicates.includes(element)){
-        //         noDuplicates.push(element)
-        //     }
-        // })
+const CohortList = ({students, setCurrentStudents, setTitle}) => {
 
+        const noDuplicates = []
+        students.forEach((student) => {
+            if(!noDuplicates.includes(student.cohort.cohortCode)){
+                noDuplicates.push(student.cohort.cohortCode)
+            }
+        })
+
+        const handleStudents = (cohort) => {
+            setCurrentStudents(students.filter((student)=>student.cohort.cohortCode === cohort))
+        }
+
+        const handleAllStudents = () => {
+            setCurrentStudents(students)
+            setTitle("All Students")
+        }
+        
 
     return(
         <div>
             <h2>Choose A Class By Start Date</h2>
             <ul>
-                <li>
-                    <button value="All Students"></button>
+                <li onClick={handleAllStudents}>
+                    All Students
                 </li>
-                {data.map(()=>{
+                {noDuplicates.map((cohort)=>{
                     return(
-                        <li key="cohortlist">
-                            <Cohort />
+                        <li key="cohortlist" onClick={()=>{handleStudents(cohort); setTitle(cohort.slice(0,-4) + " " + cohort.slice(-4))}}>
+                           {cohort.slice(0,-4) + " " + cohort.slice(-4)}
                         </li>
                     )
                 })}

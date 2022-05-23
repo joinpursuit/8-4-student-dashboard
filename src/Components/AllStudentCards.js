@@ -1,34 +1,52 @@
 import React from "react";
-import StudentCard from "./StudentCard"
-import data from "../data/data.json"
+import StudentCard from "./StudentCard";
 
-const AllStudentCards = () => {
+const AllStudentCards = ({
+  currentStudents,
+  title
+}) => {
 
-        // let imgData 
-        // fetch(`https://fakeface.rest/face/json`)
-        // .then((response) => response.json())
-        // .then((json) => {
-        //     json.map((element) => {
-        //         imgData = element["image_url"]
-        //     }))
-
-return(
+  return (
     <div>
-        <h2>All Students</h2>
-        <h4>Total Students: {data.length}</h4>
-        <ul>
-            {data.map(({img, names, username, cohortCode})=>{
-                return(
-                    <li>
-                        <StudentCard key={cohortCode} names={names} username={username}/>
-                        <img id={img} src="https://fakeface.rest/thumb/view" alt={names.preferredName} width={50} height={50}></img>
-                    </li>
-                )
-            })}
-        </ul>
+      <h2>{title}</h2>
+      <h4>Total Students: {currentStudents.length}</h4>
+      <ul>
+        {currentStudents.map(
+          ({
+            img,
+            names,
+            username,
+            cohort,
+            dob,
+            certifications,
+            codewars,
+            profilePhoto,
+          }) => {
+            return (
+              <li>
+                <StudentCard
+                  names={names}
+                  username={username}
+                  cohortCode={cohort.cohortCode}
+                  dob={dob}
+                  certifications={certifications}
+                  codewars={codewars} 
+                  cohort={cohort}
+                />
+                <img
+                  id={img}
+                  src={profilePhoto}
+                  alt={names.preferredName}
+                  width={50}
+                  height={50}
+                ></img>
+              </li>
+            );
+          }
+        )}
+      </ul>
     </div>
-)
+  );
+};
 
-}
-
-export default AllStudentCards
+export default AllStudentCards;
