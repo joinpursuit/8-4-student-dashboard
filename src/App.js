@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cohart from "./Cohart";
 import Students from "./Students";
+import data from './data/data.json';
 // how do you import the data.json for the cohart useState???
 
 

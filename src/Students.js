@@ -1,35 +1,12 @@
 
-import React , {useEffect, useState} from "react";
+import React , { useState} from "react";
 import StudentsCard from "./StudentsCard";
 import data from './data/data.json';
 
 const Students = () => {
     const [cohart, setCohart] = useState([])
 
-    useEffect(() =>{
-        {data.map((stu)=>{
-
-                setCohart(cohart=>[...cohart,stu.cohort.cohortCode])
-        
-
-            }
-            
-
-        )}})
-
-        useEffect(()=>{
-            setCohart([...new Set(cohart)])
-        })
-
-        console.log(cohart)
-
-
-
     
-    
-
-    
-
 
 
     return (
@@ -38,6 +15,7 @@ const Students = () => {
             <h1>All Students</h1>
             <p>Total students : {data.length}</p>
             </span>
+            {/* iterate throygh the data.json for each person return that data to the StudentCard component */}
             {data.map((person) => {return <StudentsCard stuData={person}></StudentsCard>})}
     
             
@@ -46,12 +24,6 @@ const Students = () => {
 
    
 }
-
-
-
-
-
-
 
 
 

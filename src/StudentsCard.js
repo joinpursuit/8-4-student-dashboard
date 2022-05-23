@@ -1,15 +1,13 @@
 import React from "react";
-import data from './data/data.json';
-import { ReactDOM } from "react-dom";
 
 /* stuData is a property which contains all JSON data
-array of student object
+array of student object from Student.js
 */
 const StudentsCard = ({stuData}) => {
-
     return (
         <div>
-        <img src={stuData.profilePhoto} ></img>
+        {/* assign key values to all the tags on the student card */}
+        <img src={stuData.profilePhoto} alt="name" width="200px"></img>
         <p>{stuData.names.preferredName} {stuData.names.middleName[0]}. {stuData.names.surname}</p>
         <p>{stuData.username}</p>
         <p>Birthday : {stuData.dob}</p>
@@ -34,10 +32,6 @@ const StudentsCard = ({stuData}) => {
     */
     )
 }
-
-
-
-
 
 
 export default StudentsCard;
