@@ -4,9 +4,9 @@ const CardContainer = ({ data, heading }) => {
   // console.log(data)
     
   return (
-    <ul className="container">
-      <h2>{heading}</h2>
-      <p>Total Students: {data.length}</p>
+    <ul className="cardContainer">
+      <h2 className="dash">{heading}</h2>
+      <p className="count">Total Students: {data.length}</p>
         {data.map(({ names, profilePhoto, id, username, dob, certifications, codewars, cohort}) => {
         return (
           <div key={id}>

@@ -1,10 +1,10 @@
-const Notes = () => {
-    return (
-        <div>
-          
+const Notes = ({ comment }) => {
+  const { commenter, text } = comment;
+  return (
+    <li>
+      {commenter} - {text}
+    </li>
+  );
+};
 
-        </div>
-    )
-}
-
-export default Notes
+export default Notes;

@@ -3,13 +3,9 @@ const StudentCard = ({ names, profilePhoto, username, dob, certifications, codew
   const [showMore, setShowMore] = useState(false)
 
   const handleClick = () => {
-    if(showMore === false){
-      setShowMore(true)
-    }else{
-      setShowMore(false)
-    }
+    showMore === false ? setShowMore(true) : setShowMore(false)
   }
-  debugger
+  
   const show = () => {
     if(showMore === true){
       return(
@@ -44,7 +40,7 @@ const StudentCard = ({ names, profilePhoto, username, dob, certifications, codew
   const checkCert = () => {
     if(certifications.resume === true && certifications.linkedin === true && certifications.github === true && certifications.mockInterview === true){
       return (
-        <p>On track to Graduate</p>
+        <p className="grad">On track to Graduate</p>
       )
     }
   }
@@ -59,7 +55,7 @@ const StudentCard = ({ names, profilePhoto, username, dob, certifications, codew
       <p>Email: {username}</p>
       <p>Birthday: {dob}</p>
       <br></br>
-      <button onClick={handleClick}>Show more...</button>
+      <button className="showMoreButton"onClick={handleClick}>Show more...</button>
       <section>{show()}</section>
     </div>
   );

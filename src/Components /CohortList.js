@@ -27,16 +27,16 @@ const CohortList = ({ data, setCohort, setHeading }) => {
 
 
   return (
-    <div className="">
+    <div className="cohortList">
       <h2>Choose a class by Start Date</h2>
-      <ul>
-        <button value="all" onClick={handleClick}>
+      <ul className="classList">
+        <button className="mainButton"value="all" onClick={handleClick}>
           All Students
         </button>
         {newList.map((cohort) => {
           return (
             <div>
-              <button value={cohort} onClick={handleClick}>
+              <button className="cohortButton" value={cohort} onClick={handleClick}>
                 {year(cohort)}
               </button>
             </div>
