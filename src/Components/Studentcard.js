@@ -100,7 +100,8 @@ const Studentcard = ({ data }) => {
                 <br></br>
                 <label htmlFor="comment">Comment </label>
                 <input type="text" name="comment" id="comment"></input>
-                <input type="submit"></input>
+                <br></br>
+                <input type="submit" id="submit"></input>
               </form>
               <div>
                 {notes &&

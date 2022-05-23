@@ -82,19 +82,25 @@ hr {
 }
 .studentList {
   margin-left: 100px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .addComment {
   border: solid 1px black;
   padding: 20px;
 }
 .notes {
-  border: solid 4px purple;
+  border: 1px solid lightgray;
+  box-shadow: 3px 3px;
   padding: 8px;
+  border-radius: 8px;
+  background-color : azure;
 }
-button {
-  color: green;
+#submit {
+  background-color: green;
+  color: white;
+  font-family: monospace;
+  box-shadow: 5px 5px;
 }
 .totalStudents {
-    color: green;
+  color: green;
 }
