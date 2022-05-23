@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 //import {v4 as uuidv4} from 'uuid';
 
 const Studentcard = ({ data }) => {
-  
+  const bday = new Date(data.dob);
+  //console.log(new Intl.DateTimeFormat('en-US', {dateStyle:'long'}).format(bday));
+
+
   const [moreInfo, setMoreInfo] = useState(false);
   const handleInfo = () => setMoreInfo((prev) => !prev);
   const [graduate, setGraduate] = useState("");
@@ -46,7 +49,7 @@ const Studentcard = ({ data }) => {
         <br></br>
         {data.username}
         <br></br>
-        Birthday : {data.dob}
+        Birthday : {new Intl.DateTimeFormat('en-US', {dateStyle:'long'}).format(bday)}
         <br></br>
         {graduate && <div className="readyToGrad">On Track to Graduate</div>}
       </div>

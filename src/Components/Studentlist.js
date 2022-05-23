@@ -19,7 +19,7 @@ const StudentList = ({ data, cohort }) => {
     }
   });
 
-  console.log(students);
+  //console.log(students);
   return (
     <div className="studentList">
       <h2>{cohort}</h2>
