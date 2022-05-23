@@ -2,7 +2,7 @@ import {FcCheckmark} from "react-icons/fc";
 import {ImCross} from "react-icons/im";
 import Comments from "./Comments";
 
-const StudentDetails = ({student}) => {
+const StudentDetails = ({student, comment, setComment, commenter, setCommenter}) => {
     let amount = Math.floor((student.codewars.current.total / student.codewars.goal.total) * 100)
     let percent;
 
@@ -39,7 +39,7 @@ const StudentDetails = ({student}) => {
                 <p><span className="span">GitHub: </span>{student.certifications.github ? <FcCheckmark/> : <ImCross/>}</p>
             </section>
             <section className="line2"></section>
-            <Comments student={student}/>
+            <Comments student={student} comment={comment} setComment={setComment} commenter={commenter} setCommenter={setCommenter}/>
         </div>
     )
 

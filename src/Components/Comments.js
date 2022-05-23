@@ -1,15 +1,20 @@
 import AddNote from "./AddNote";
-import {useState} from 'react';
 
-const Comments = ({student}) => {
-    const [commenter, setCommenter] = useState('');
-    const [comment, setComment] = useState('');
-    // const [newComments, setNewComments] = useState([{commenter: commenter, comment: comment}])
+const Comments = ({student, comment, setComment, commenter, setCommenter}) => {
+
+    // const handleCommenter = (e) =>{
+    //     const {value} = e.target;
+    //     setCommenter([...commenter, value])
+    // }
+
+    // const handleComment = (e) =>{
+    //     const {value} = e.target;
+    //     setComment([...commenter, value])
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setCommenter('');
-        setComment('');
+        
     }
 
     return (
@@ -17,12 +22,12 @@ const Comments = ({student}) => {
             <h4>1-on-1 Notes</h4>
             <form className="form" onSubmit={handleSubmit}>
                 <label>
-                    Commenter Name: <input type='text' className="name" value={commenter} onChange={(e) => setCommenter(e.target.value)}/>
+                    Commenter Name: <input type='text' className="name" value={commenter} />
                 </label>
                 <br/>
                 <br/>
                 <label>
-                    Comment: <input type='text' className="comment" value={comment} onChange={(e) => setComment(e.target.value)}/>
+                    Comment: <input type='text' className="comment" value={comment}/>
                 </label>
                 <br/>
                 <br/>
