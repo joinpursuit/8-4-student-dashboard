@@ -13,18 +13,36 @@ const ClassList = ({ data, setCohort }) => {
   }
 
   const cohortMaker = () => {
-    let sortKey;
-    let year;
-    let season;
     let testObj = [];
     for (let cohort of cohortList) {
-      year = cohort.slice(cohort.length - 4);
-      season = cohort.slice(0, cohort.length - 4);
+      const year = cohort.slice(cohort.length - 4);
+      const season = cohort.slice(0, cohort.length - 4);
+      let sortKey;
+      // eslint-disable-next-line default-case
+      switch (season) {
+        case "Spring":
+          sortKey = year * 10 + 1;
+          break;
+        case "Summer":
+          sortKey = year * 10 + 2;
+          break;
+        case "Fall":
+          sortKey = year * 10 + 3;
+          break;
+        case "Winter":
+          sortKey = year * 10 + 4;
+          break;
+      } // WHOOPS
       testObj.push({
         season: season,
         year: year,
+        key: sortKey,
+        code: cohort,
       });
     }
+    testObj.sort((a, b) => {
+      return a.key - b.key;
+    });
     return testObj;
   };
 
@@ -43,12 +61,17 @@ const ClassList = ({ data, setCohort }) => {
           </h3>
           <hr></hr>
         </div>
-        {cohortList.map((cohort) => {
+        {cohortArray.map((cohort) => {
           return (
-            <div key={cohort}>
-              <h3 id={cohort} onClick={handleCohort} className="hoverPointer">
-                {cohort}
+            <div key={cohort.code}>
+              <h3
+                id={cohort.code}
+                onClick={handleCohort}
+                className="hoverPointer"
+              >
+                {cohort.season} {cohort.year}
               </h3>
+
               <hr></hr>
             </div>
           );
