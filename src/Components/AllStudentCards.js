@@ -7,9 +7,9 @@ const AllStudentCards = ({
 }) => {
 
   return (
-    <div>
+    <div className="column2">
       <h2>{title}</h2>
-      <h4>Total Students: {currentStudents.length}</h4>
+      <h4>Total Students: <span style={{color: "hotpink"}}> {currentStudents.length}</span></h4>
       <ul>
         {currentStudents.map(
           ({
@@ -21,9 +21,19 @@ const AllStudentCards = ({
             certifications,
             codewars,
             profilePhoto,
+            notes
           }) => {
             return (
+              <div className="studentListItem">
               <li>
+                <img className="image"
+                  id={img}
+                  src={profilePhoto}
+                  alt={names.preferredName}
+                  width={100}
+                  height={100}
+                ></img>
+                <div className="studentInfo">
                 <StudentCard
                   names={names}
                   username={username}
@@ -32,15 +42,11 @@ const AllStudentCards = ({
                   certifications={certifications}
                   codewars={codewars} 
                   cohort={cohort}
+                  notes={notes}
                 />
-                <img
-                  id={img}
-                  src={profilePhoto}
-                  alt={names.preferredName}
-                  width={50}
-                  height={50}
-                ></img>
+                </div>
               </li>
+              </div>
             );
           }
         )}

@@ -21,15 +21,15 @@ const CohortList = ({students, setCurrentStudents, setTitle}) => {
         
 
     return(
-        <div>
-            <h2>Choose A Class By Start Date</h2>
+        <div className="column1">
+            <h2 className="cohortListTitle">Choose A Class By Start Date</h2>
             <ul>
-                <li onClick={handleAllStudents}>
+                <li className="cohortListItem" onClick={handleAllStudents}>
                     All Students
                 </li>
                 {noDuplicates.map((cohort)=>{
                     return(
-                        <li key="cohortlist" onClick={()=>{handleStudents(cohort); setTitle(cohort.slice(0,-4) + " " + cohort.slice(-4))}}>
+                        <li className="cohortListItem" key="cohortlist" onClick={()=>{handleStudents(cohort); setTitle(cohort.slice(0,-4) + " " + cohort.slice(-4))}}>
                            {cohort.slice(0,-4) + " " + cohort.slice(-4)}
                         </li>
                     )

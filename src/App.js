@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AllStudentCards from "../src/Components/AllStudentCards"
 import CohortList from "./Components/CohortList";
 import students from "../src/data/data.json"
-
+import "../src/App.css"
 
 
 
@@ -15,11 +15,13 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Student Dashboard </h1>
-      <AllStudentCards students={students} currentStudents={currentStudents} title={title}/>
+    <>
+    <h1 className="header">Student Dashboard </h1>
+    <div className="body">
       <CohortList students={students} setCurrentStudents={setCurrentStudents} setTitle={setTitle}/>
+      <AllStudentCards students={students} currentStudents={currentStudents} title={title}/>
     </div>
+    </>
   );
 }
 

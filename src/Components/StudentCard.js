@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const StudentCard = ({names, username, dob, certifications, codewars, cohort}) => {
+const StudentCard = ({names, username, dob, certifications, codewars, cohort, notes}) => {
 
     const [studentDetails, setStudentDetails] = useState(false)
 
@@ -18,23 +18,46 @@ const StudentCard = ({names, username, dob, certifications, codewars, cohort}) =
           )
       };
 
-    const [buttonText, setButtonText] = useState("More Information...")
+    const [buttonText, setButtonText] = useState(false)
 
-    const handleButtonText = (text) => setButtonText(text)
+    // const handleButtonText = (text) => {
+    //   setButtonText(text)
+    // }
+
+    const [input1, setInput1] = useState("")
+    const [input2, setInput2] = useState("")
+    const [submitButton, setSubmitButton] = useState("")
+
+    const handleInput1 = (event) => {
+      setInput1(event.target.value)
+    }
+
+    const handleInput2 = (event) => {
+      setInput2(event.target.value)
+    }
+
+    const handleSubmitButton = (event) => {
+      event.preventDefault()
+      return (
+        <li>
+        {setSubmitButton({input1} + "says," + {input2})} 
+      </li>
+      )
+    }
 
     return (
         <div>
             <h4>{names.preferredName} {names.middleName[0]}. {names.surname} </h4>
             <h5>{username}</h5>
-            <h5>{bdayArr[1] + " " + bdayArr[2] + " " + bdayArr[3]}</h5>
+            <h5>Birthday: {bdayArr[1] + " " + bdayArr[2] + ", " + bdayArr[3]}</h5>
             {handleonTrack() ?  (
               <div>
                 <h5>On Track to Graduate</h5>
               </div>
             ): null}
             
-            <button type="submit" onClick={() => {setStudentDetails(!studentDetails); handleButtonText("Show Less...")} }>
-                {buttonText}
+            <button type="submit" onClick={() => {setStudentDetails(!studentDetails); setButtonText(!buttonText)} }>
+                {buttonText ? "Show Less..." : "Show More..."}
                 </button>
 
                 {studentDetails ? (
@@ -53,13 +76,29 @@ const StudentCard = ({names, username, dob, certifications, codewars, cohort}) =
                     <p>Github: {certifications.github ? "✔" : "×"}</p>
                     <p>Mock Interview: {certifications.mockInterview ? "✔" : "×"}</p>
                     <section>
-                      <h5>1-on-1 Notes</h5>
                       <form>
+                      <h5>1-on-1 Notes</h5>
                         <label>
                           Commenter Name: 
-                          <input type="text"/>
+                          <input type="text"value={input1} onChange={handleInput1}/>
                         </label>
+                        <br></br>
+                        <label>
+                          Comment:
+                          <input type="text" value={input2} onChange={handleInput2}/>
+                        </label>
+                        <br></br>
+                        <input type="submit" value="Add Note"/>
                       </form>
+                      <ul>
+                        {handleSubmitButton}
+                        {notes.map(({commenter, comment})=>{ return(
+                          <li>
+                            {commenter} says, {comment} 
+                          </li>
+                        )
+                        })}
+                      </ul>
                     </section>
                   </div>
                 ) : null}
