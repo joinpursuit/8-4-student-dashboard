@@ -66,7 +66,7 @@ const StudentCard = ({
     <div className="studentCard">
       <img src={profilePhoto} alt={names.preferredName} width="50px"></img>
       <h3>
-        Name: {`${names.preferredName} ${names.middleName} ${names.surname}`}
+        Name: {`${names.preferredName} ${names.middleName[0]}. ${names.surname}`}
       </h3>
       <p>{checkCert()}</p>
       <p>Email: {username}</p>
