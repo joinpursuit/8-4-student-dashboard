@@ -30,8 +30,8 @@ const AllStudentCards = ({
                   id={img}
                   src={profilePhoto}
                   alt={names.preferredName}
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                 ></img>
                 <div className="studentInfo">
                 <StudentCard

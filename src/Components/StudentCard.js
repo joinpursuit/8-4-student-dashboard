@@ -75,7 +75,7 @@ const StudentCard = ({names, username, dob, certifications, codewars, cohort, no
                     <p>Linkedin: {certifications.linkedin ? "✔" : "×"}</p>
                     <p>Github: {certifications.github ? "✔" : "×"}</p>
                     <p>Mock Interview: {certifications.mockInterview ? "✔" : "×"}</p>
-                    <section>
+                    <section className="section1">
                       <form>
                       <h5>1-on-1 Notes</h5>
                         <label>
