@@ -1,0 +1,234 @@
+/* body {
+    font-family: Georgia, Times, 'Times New Roman', serif
+} */
+
+h2,
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+
+    gap: 20px 20px;
+    grid-template-areas:
+        "Header Header"
+        "Cohort Students"
+        "Cohort Students";
+}
+
+.Header {
+    grid-area: Header;
+    background-color: rebeccapurple;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+    height: 100px;
+}
+
+.Cohort {
+    grid-area: Cohort;
+    text-align: center;
+}
+
+.CohortList {
+    text-align: left;
+    margin: 20px;
+}
+
+.CohortList li {
+    border-bottom: 2px solid rebeccapurple;
+    margin: 20px;
+    list-style: none;
+    font-weight: 700;
+}
+
+.Students {
+    grid-area: Students;
+
+}
+
+.TitleWidget {
+    margin: 0 20px;
+}
+
+.TitleWidget span {
+    color: rebeccapurple;
+}
+
+img {
+    position: absolute;
+    transition: 1s ease;
+    border-radius: 5px;
+    width: 100px;
+}
+
+img:hover {
+    border-radius: 50%;
+    transition: 1s ease;
+}
+
+.Student {
+    display: inline-block;
+    margin-left: 120px;
+}
+
+.Student span {
+    color: rebeccapurple;
+}
+
+.StudentProfile {
+    border: 2px solid rebeccapurple;
+    margin: 20px;
+    padding: 20px;
+}
+
+.StudentStatus {
+    text-align: right;
+    color: green;
+}
+
+.ShowMoreLink {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ShowMore {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.MoreBox {
+    width: 100%;
+}
+
+.xIcon {
+    width: 18px;
+}
+
+.tickIcon {
+    width: 24px;
+}
+
+.link-button {
+    background-color: transparent;
+    color: rebeccapurple;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.CohortList li {
+    cursor: pointer;
+}
+
+
+
+.OneOnOne {
+    padding: 20px;
+    /*font-weight: bold;*/
+}
+
+.OneOnOne form {
+    padding: 12px;
+    border: 1px solid rebeccapurple;
+    font-weight: bold;
+}
+
+input {
+    padding: 2px;
+    margin: 0 5px;
+}
+
+.NotesBtn {
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    color: white;
+    width: 120px;
+    font-weight: bolder;
+
+}
+
+hr {
+    border-color: rebeccapurple;
+}
+
+/* Media Queries*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 500px) {
+
+    .container {
+        display: block;
+
+        gap: 20px 20px;
+        grid-template-areas:
+            "Header Header"
+            "Cohort Students"
+            "Cohort Students";
+    }
+
+    .Header h1 {
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .Header {
+        margin-bottom: 20px;
+    }
+
+    .TitleWidget {
+        text-align: center;
+        margin: 0 20px;
+    }
+
+    .StudentStatus {
+        font-size: 14px;
+
+    }
+
+    .Cohort h2 {
+        font-size: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 805px) {
+
+    .container {
+        display: block;
+
+        gap: 20px 20px;
+        grid-template-areas:
+            "Header Header"
+            "Cohort Students"
+            "Cohort Students";
+    }
+
+    .Header h1 {
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .TitleWidget {
+        text-align: center;
+        margin: 0 20px;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
