@@ -1,0 +1,96 @@
+section {
+  display: grid;
+  grid-column: 1/4;
+  border: solid #699272;
+  margin: 10px;
+  padding: 15px;
+}
+img{
+  grid-column: 1/1;
+  width: 150px;
+  height: 150px;
+}
+header{
+  background-color:#699272;
+  padding: 20px;
+  text-align: center;
+}
+span{
+  color:  #699272;
+}
+.ShowMore{
+  color:  #699272;
+}
+.ShowMore:hover{
+    text-decoration: underline;
+}
+.student{
+  grid-column: 2/4;
+}
+main{
+  height: 750px;
+  display: grid;
+  grid-column: 1/5;
+}
+
+li:hover{
+  color:  #699272;
+}
+li{
+  padding: 15px;
+  list-style: none;
+  text-decoration: underline;
+}
+.class{
+  grid-column: 1/2;
+}
+.allStudents{
+  grid-column: 2/4;
+  overflow:scroll
+}
+.more{
+
+  display:grid;
+  grid-column: 1/4;
+}
+.more p{
+  color:  #699272
+}
+.more p span{
+  color:black;
+}
+.one{
+  grid-column: 1/2;
+}
+.two{
+  grid-column: 2/3;
+}
+.three{
+  grid-column: 3/4;
+}
+
+.list{
+  margin-top: 50px;
+}
+
+.class h2{
+  margin-left: 50px;
+}
+
+.comments{
+  margin-left: 70px;
+  grid-column: 1/4;
+}
+
+.comments h4{
+margin-left: 280px
+}
+
+label{
+  padding: 20px;
+}
+
+hr{
+  margin-right: 50px;
+  color: green;
+}
