@@ -1,0 +1,123 @@
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.All {
+  cursor: pointer;
+}
+
+.left-side h4:hover {
+  color: #4b9cd3;
+}
+
+.class-item {
+  border-bottom: 2px solid #4f758b;
+  cursor: pointer;
+  width: 20vw;
+}
+
+.fixed-header {
+  font: "Playfair Display", monospaced;
+  background-color: #4b9cd3;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 2px;
+  color: white;
+}
+
+.right-side {
+  grid-column: 2 / span 3;
+}
+
+.container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  height: 80vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.show-more {
+  display: block;
+  cursor: pointer;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  float: left;
+  padding: 1.5px;
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.red {
+  color: red;
+}
+
+.card {
+  border: 2px solid #4b9cd3;
+  margin: 10px;
+  padding: 10px;
+}
+
+.profile {
+  width: 150px;
+  height: 150px;
+}
+
+.birthday {
+  display: flex;
+  justify-content: baseline;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.green {
+  color: green;
+}
+
+.show-more {
+  text-decoration: underline;
+}
+
+.graduation {
+  color: #13294b;
+  float: right;
+  margin-right: 50px;
+}
+
+.fixed-footer {
+  font-family: "Playfair Display", monospaced;
+  float: left;
+  position: absolute bottom;
+  background-color: #4b9cd3;
+  text-align: center;
+  width: 70%;
+  color: white;
+}
+
+.fixed-footer h4:hover {
+  color: #ffffff;
+}
