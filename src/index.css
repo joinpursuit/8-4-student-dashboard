@@ -1,71 +1,203 @@
+@media (min-width: 700px) {
+    .user-profile {
+      display: flex;
+
+    }
+  }
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+img {
+    animation-name: zoom;
+    animation-duration: s;
+}
+
+.showTitle{
+    color:#4141ea
+}
+
 .grid {
+    /*Self explanatory*/
+    background-color: white;
+    opacity: 0.0 - 0.2;
     display: grid;
     grid-template-areas:
-        "t t t"
-        "c s s";
+        "t t t t"
+        "n n n l"
+        "c s s s";
 }
 
 .title {
+    /*Self explanatory*/
     grid-area: t;
     text-align: center;
-    background-color: rgb(77, 145, 77);
+    background-color: #4142ea;
     color: white;
     margin-top: 0px;
     padding: 20px;
 }
 
+
+.Logo {
+    grid-area: l;
+    height: 50px;
+    width: 50px;
+    -moz-box-align: end;
+}
+
+
 .cardContainer {
-    font-family: Arial, Helvetica, sans-serif;
+    /*Self explanatory*/
     grid-area: s;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-img {
-    float: left;
-    height: 118px;
-    width: 118px;
-}
 
-.showMore {
-    padding: 20px;
+.sCards {
+    border: 2px solid #4142ea;
+    padding: 10px;
+    margin: 6px;
+    color: rgb(8, 0, 94);
+
 }
 
 .sCards {
-    border: 2px solid rgb(124, 187, 124);
-    padding: 10px;
-    margin: 10px;
+    box-shadow: 0 0px 1px 0 rgba(100, 86, 255, 0.2);
+    transition: 0.3s;
+}
+
+.sCards:hover {
+    box-shadow: 0 2px 8px 0 rgb(0, 0, 0);
+}
+
+img {
+    /*Self explanatory*/
+    float: left;
+    height: 110px;
+    width: 110px;
+    border-radius: 20px;
+}
+
+.ul{
+    height: 20PX;
+    overflow: auto; 
+}
+
+img {
+    padding: 6px;
+    background-color: transparent;
+    transition: transform .2s;
+    height: 110px;
+    width: 110px;
+    margin: 0 auto;
+}
+
+img:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.cardInfo {
+    margin-left: 125px;
+    color:#000056;
 }
 
 .dash {
+    /*All Students heading in all Students*/
     margin: 10px;
+    color:#000056;
 }
 
 
 .cohortL {
-   text-align: left;
-   font-family: Arial, Helvetica, sans-serif;
+    grid-area: c;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000056;;
+}
+
+.cohortL h2 {
+    text-align: center;
 }
 
 .cohortButton {
-   border:none;
-   background-color: white;
-   font-family: Arial, Helvetica, sans-serif;
-   font-weight: bold;
-   text-align: left;
+    /*The main cohort button*/
+    border: none;
+    background-color: transparent;
+    opacity: 0.0 - 1.0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: #000056;
+    padding-right: 100px;
 }
 
-.cList{
+.cList {
+    /*<li> which wraps the main cohort button*/
+    border-bottom: 1.5px solid #4142ea;
     list-style: none;
-    border-bottom: 2px solid black;
-    padding:20px;
+    padding: 20px;
     margin-right: 20px;
+    margin-left: 1px;
+}
+
+.allButton {
+    /*cohort handleClick button*/
+    border: none;
+    background-color: transparent;
+    opacity: 0.0 - 1.0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+    padding-right: 100px;
+    text-decoration: underline;
+    color: #000056;
+}
+
+.count {
+    /*Student Counter below the All Students title above the cards*/
     margin-left: 10px;
+    color:#000056
 }
-.showB{
-    margin-left: 120px;
+.Bname{
+    color: Red;
+    margin-left: 125px;
 }
-.count{
-    margin-left: 10px;
+
+.showB {
+    /*Show More Button */
+    font-size: 12px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(64, 94, 64)
 }
+
+.parent {
+    /*Codewars, Scores, Certifications Show More Button  */
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 13px;
+}
+
+button {
+    box-shadow: 0 0px 0px 0 #4142ea;
+    ;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 2px 8px 0 rgb(0, 2, 128);
+    transform: scale(1.15);
+    box-shadow: 2px 8px 4px rgb(153, 145, 250);
+}
+

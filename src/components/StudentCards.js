@@ -1,23 +1,33 @@
-import React,{useState} from 'react'
+import React from 'react'
+import Cohorts from './Cohorts'
+import StudentCard from './StudentCard'
 
-export default function StudentCards({data}) {
+export default function StudentCards({ students }) {
 
-  const[show, setShow] = useState(data)
- 
 
-  const handleClick=(data)=>{
-   setShow(data.codewars)
+  return (
+    <div>
+      {students.map((student) =>
+        <StudentCard student={student} />
+      )}
+    </div>
+  )
 }
-   return data.map((student)=>{
-        return(
-          <div className="sCards">
-            <img src={student.profilePhoto}/>&nbsp;
-            <p>{student.names.preferredName}&nbsp;{student.names.middleName[0]}.&nbsp;{student.names.surname}</p>
-            <p>{student.username}</p>
-            <p>Birthday: {student.dob}</p>
-            <button className="showB" onClick={handleClick}>Show More...</button>
-          </div>
-        )
-      })
-    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
