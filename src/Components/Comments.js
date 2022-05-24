@@ -30,12 +30,12 @@ const Comments = () => {
         <input type="text" onChange={getComment}></input>
         <br />
         <button type="submit">Add Note</button>
-    </form>
     <ul>
     <li>
     <p>{note}</p>
     </li>
     </ul>
+    </form>
     </>
     )
   

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Comments from "./Comments";
 const StudentCard = ({
   names,
   profilePhoto,
@@ -63,6 +63,7 @@ const StudentCard = ({
     }
   };
   return (
+    <>
     <div className="studentCard">
       <img src={profilePhoto} alt={names.preferredName} width="50px"></img>
       <h3>
@@ -75,6 +76,10 @@ const StudentCard = ({
       <button onClick={handleClick}>Show more...</button>
       <section>{show()}</section>
     </div>
+     <div className="comments">
+     <Comments />
+     </div>
+     </>
   );
 };
 

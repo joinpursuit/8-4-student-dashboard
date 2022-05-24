@@ -1,4 +1,12 @@
 .dashboard{
     display: grid;
-    grid-template-columns:  .5fr auto;
+    grid-template-columns:  1fr auto;
+}
+
+.cohort-list button{
+   background-color: rgb(165, 201, 224);
+   border-radius: 10%;
+   width: 300px;
+    text-align: left;
+    font-size: 25px;
 }

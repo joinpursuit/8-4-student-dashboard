@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CohortList from "./Components/CohortList";
-import Comments from "./Components/Comments";
 import StudentList from "./Components/StudentList";
 import "./App.css";
 
@@ -17,10 +16,6 @@ function App() {
       <div className="students-list">
       <h1>Student Dashboard</h1>
       <StudentList data={cohort} heading={heading} />
-      </div>
-      
-      <div className="comments">
-      <Comments />
       </div>
     </div>
   );
