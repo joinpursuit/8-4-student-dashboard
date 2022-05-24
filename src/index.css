@@ -66,7 +66,7 @@ img{
      margin: 10px;
 }
 .classList{
-    border-bottom: 2px solid rgb(77, 145, 77);
+    border-bottom: 2px solid rgb(77, 80, 145);
     list-style: none;
     padding: 20px;
     margin-right: 20px;
@@ -96,6 +96,9 @@ img{
     text-decoration: underline;
     color:rgb(0, 22, 1)
 }
+.button {
+    border-bottom: 1px solid lavender;
+}
 .count {
     margin-left: 10px;
 }
@@ -111,4 +114,19 @@ img{
     margin-bottom: 20px;
     margin-left: 700px;
     margin-right: 150px;
+}
+.extra{
+    display: grid;
+    grid-template-areas: "code scores certification"
+    "code scores certification"
+    "code scores certification";
+}
+.code{
+    grid-area: code;
+}
+.scores{
+    grid-area: scores;
+}
+.certification{
+    grid-area: certification;
 }

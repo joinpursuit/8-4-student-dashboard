@@ -36,7 +36,7 @@ const CohortList = ({ data, setCohort, setHeading }) => {
         {newList.map((cohort) => {
           return (
             <div>
-              <button className="cohortButton" value={cohort} onClick={handleClick}>
+              <button className="cohortButton"value={cohort} onClick={handleClick}>
                 {year(cohort)}
               </button>
             </div>
