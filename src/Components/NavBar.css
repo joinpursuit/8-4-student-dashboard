@@ -1,0 +1,11 @@
+nav {
+    background-color: rgb(70, 163, 106);
+    height: 100px;
+    text-align: center;
+}
+
+nav h1 {    
+    font-family: Arial ;
+    font-size: 32px;
+    color: white;
+}
