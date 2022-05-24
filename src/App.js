@@ -8,7 +8,6 @@ const App = () => {
   const [totalAmountOfStudents, setTotalAmountOfStudents] = useState(
     datas.length
   );
-  const [uniStudentCohort, setuniStudentCohort] = useState([]);
   const [filterCohort, setFilterCohort] = useState("All students");
 
   return (
@@ -19,19 +18,16 @@ const App = () => {
           datas={datas}
           totalAmountOfStudents={totalAmountOfStudents}
           setTotalAmountOfStudents={setTotalAmountOfStudents}
-          uniStudentCohort={uniStudentCohort}
-          setuniStudentCohort={setuniStudentCohort}
           filterCohort={filterCohort}
         />
       </div>
 
       <CohortList
         datas={datas}
-        uniStudentCohort={uniStudentCohort}
-        setuniStudentCohort={setuniStudentCohort}
         filterCohort={filterCohort}
         setFilterCohort={setFilterCohort}
       />
+      <button className="back-to-top" onClick={()=> {window.scrollTo({top:0, behavior:"smooth"})}}>Back to top</button>
     </main>
   );
 };

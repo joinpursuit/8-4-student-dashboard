@@ -38,10 +38,26 @@ h1 {
 .Cohortlist {
   grid-column: 1/4;
   text-align: left;
-  text-decoration: underline;
-  text-decoration-color: green;
   font-size: 30px;
+  /* position: sticky; */
+
 }
+
+.Cohortlist li {
+    text-decoration: underline;
+    text-decoration-color: green;
+
+}
+
+.hoverColor:hover {
+    color:yellowgreen;
+ 
+}
+
+/* .hoverColor {   
+    border-bottom: 2px solid green;
+
+} */
 
 h2 {
   font-size: 30px;
@@ -51,4 +67,11 @@ h2 {
   text-align: left;
   padding: 20px;
   margin: auto;
+}
+
+
+.back-to-top {
+    position: fixed;
+    right:2rem;
+    bottom:2rem;
 }

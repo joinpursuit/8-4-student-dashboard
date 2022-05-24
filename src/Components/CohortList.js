@@ -94,7 +94,14 @@ const CohortList = ({ datas, setFilterCohort }) => {
         })}
 
         {sortedCohortcode.map((cohortCode) => {
-          return <li onClick={changeFilter}>{cohortCode}</li>;
+          return (
+              <>
+              <li className="hoverColor" onClick={changeFilter}>{cohortCode}</li>
+                {/* <hr style={{color:"green"}}></hr> */}
+              
+              </>
+          
+          )
         })}
       </ul>
     </div>
