@@ -1,0 +1,93 @@
+.grid {
+
+    /*Self explanatory*/
+    background-color: white;
+    opacity: 0 - 0.2;
+    display: grid;
+    grid-template-areas:
+      "t t t t"
+      "c s s s"
+      "f f f f"
+
+}
+
+
+
+.container {
+    grid-area: s;
+    
+}
+.singleCard {
+    border: 1px solid green;
+    margin: 10px;
+
+}
+
+.pic {
+    float: left;
+    height: 100px;
+    width: 100px; 
+}
+
+.title {
+    grid-area: t;
+    text-align: center;
+    color:white;
+    background-color: green;
+    padding: 10px;
+}
+
+.form {
+    grid-area: f;
+    border: 1px solid green;
+}
+.cohort {
+    grid-area: c;
+    text-align: left;
+}
+.cohort h2 {
+    text-align: center;
+}
+.showMore {
+    display: grid;
+    grid-template-areas: 
+    "code score cert";
+}
+.score {
+    grid-area: score;
+    margin-right: 5px;
+}
+.code {
+    grid-area: code;
+    margin-right: 5px;
+    margin-left: 20px;
+}
+.cert {
+    grid-area: cert;
+}
+
+.cList {
+    border-bottom: 1px solid green;
+    list-style: none;
+    padding: 30px;
+}
+.butt {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+    color: rgb(0, 22, 1);
+    text-align: center;
+    padding-right: 10px;
+}
+
+.showbutt {
+    border: none;
+    background-color: transparent;
+    color: green;
+}
+.note {
+    background-color: green;
+    color: white;
+}
