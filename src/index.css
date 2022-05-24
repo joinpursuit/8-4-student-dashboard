@@ -13,6 +13,7 @@
     margin-top: 0px;
     grid-column-start: 1;
     grid-column-end: 4;
+    animation-name: slidein;
 }
 
 .card{
@@ -33,12 +34,17 @@
     border-radius: 20px;
 }
 
+img:hover{
+    transform: scale(1.15);
+}
+
 .card button{
     background: none;
     border: none;
     padding: 10px;
     text-decoration: underline;
     color: rgb(100, 142, 100);
+    cursor: pointer;
 }
 
 .graduate{
@@ -61,6 +67,11 @@
     margin-right: 40px;
 }
 
+.wrapper{
+    overflow: scroll;
+    height: 400px;
+}
+
 .cohorts{
     grid-column-start: 1;
     grid-column-end: 2;
@@ -80,6 +91,7 @@
     border: none;
     padding: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .cohorts button:hover{
@@ -94,6 +106,7 @@
     background: none;
     border: none;
     padding: 10px;
+    cursor: pointer;
 }
 
 .cohort button:hover{
@@ -101,9 +114,7 @@
 }
 
 .line{
-    background-color: rgb(100, 142, 100);
-    height: 2px;
-    width: auto;
+    border-bottom: 1px solid rgb(100, 142, 100);
     margin-right: 60px;
 }
 
@@ -114,14 +125,6 @@
     "l l l"
     "f f f";
     padding-left: 10px;
-}
-
-.line2{
-    grid-area: l;
-    background-color: rgb(100, 142, 100);
-    height: 2px;
-    width: auto;
-    margin-right: 15px;
 }
 
 .comments{
@@ -144,6 +147,7 @@
     background-color: rgb(100, 142, 100);
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .span{
@@ -190,16 +194,16 @@
         font-size: x-small;
     }
 
-    .line{
+    /* .line{
         display: none;
-    }
+    } */
 
     .card img{
         float: none;
     }
 
     .cohorts button{
-        text-decoration: underline;
+        /* text-decoration: underline; */
         text-align: left;
         font-size: x-small;
         padding-left: 0%;

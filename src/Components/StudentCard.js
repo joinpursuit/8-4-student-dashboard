@@ -8,6 +8,10 @@ const StudentCard = ({data}) => {
     const [commenter, setCommenter] = useState('');
     const [comment, setComment] = useState('');
 
+    // let dob = new Date(data.dob)
+    // let month= dob.getMonth()
+    // console.log(month)
+
     return (
         <div className="card" id={data.id}>
             <img src={data.profilePhoto} alt={data.names.preferredName}/>
