@@ -1,0 +1,74 @@
+.page {
+    display: grid;
+    grid-template-areas: 
+    "nav nav nav"
+    "cohort students students"
+    "cohort form form";
+}
+
+.nav{
+    grid-area: nav;
+    text-align: center;
+    background-color: blue;
+    color:white;
+}
+
+.cohort {
+    grid-area: cohort;
+}
+
+.students {
+    grid-area: students;
+}
+
+.card {
+border: 1px solid blue;
+margin: 10px;
+}
+
+.form {
+    grid-area: form;
+}
+
+.pic {
+    float: left;
+    height: 170px;
+    width: 170px;
+}
+
+.showMore {
+    display: grid;
+    grid-template-areas: "code score cert";
+}
+
+.code {
+    grid-area: code;
+    margin-right: 5px;
+}
+
+.score{
+    grid-area: score;
+    margin-right: 5px;
+}
+
+.cert {
+    grid-area: cert;
+}
+
+.cList {
+    border-bottom: 1px dotted blue;
+    list-style: none;
+    padding: 30px;
+}
+
+.butt {
+    border: none;
+    background-color: gold;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20;
+    color: rgb(0, 22, 1);
+    text-align: center;
+    padding-right: 10px;
+   
+}
