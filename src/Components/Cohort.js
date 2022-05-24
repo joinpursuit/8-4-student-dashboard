@@ -1,16 +1,31 @@
 import React from 'react'
 
 export default function Cohort(props) {
-    console.log(props)
+    const { studentData, setStudents } = props 
+    console.log(studentData);
+
   return (
-    <div>
-        <h3>Choose a class by start date
-        </h3>
+      <React.Fragment>
+    
+        <h3>Choose a class by start date</h3>
+        
         <ul>
+            <li> All Students</li>
+
+            {studentData.map((student) => {
+                // const { cohortCode } = student.cohort.cohortCode;
+
+                return (
+                 
+                
+           
+               
+            
             <li>
-                All Students
+                <button>Winter 2026</button>
             </li>
         </ul>
-     </div>
+        </React.Fragment>
+    
   )
 }

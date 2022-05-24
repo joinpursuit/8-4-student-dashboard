@@ -8,11 +8,11 @@ function App() {
   console.log(studentData)
   return (
     <div>
-      <h1>Student Dashboard</h1>
+      <header>Student Dashboard</header>
 
       <Cohort/>
       
-      <StudentList studentData={ students } taco='taco'/>
+      <StudentList studentData={ students } />
 
     </div>
   );
