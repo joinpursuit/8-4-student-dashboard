@@ -1,0 +1,85 @@
+.page {
+    display: grid;
+    grid-template-areas: 
+    "nav nav nav"
+    "cohort students students"
+    "cohort form form";
+    font-family: Blippo, fantasy;
+}
+
+.nav{
+    grid-area: nav;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.cohort {
+    grid-area: cohort;
+}
+
+.students {
+    grid-area: students;
+}
+
+.card {
+    border: 2px solid black;
+    box-shadow: 5px 5px gray;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.form {
+    grid-area: form;
+    border: 2px solid black;
+    box-shadow: 5px 5px gray
+}
+
+.pic {
+    float: left;
+    height: 170px;
+    width: 170px;
+    margin-right: 10px;
+}
+
+.showMore {
+    display: grid;
+    grid-template-areas: "code score cert";
+}
+
+.code {
+    grid-area: code;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.score{
+    grid-area: score;
+    margin-right: 5px;
+}
+
+.cert {
+    grid-area: cert;
+}
+
+.cList {
+    list-style: none;
+    padding: 20px;
+}
+
+.butt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    box-shadow: 5px 5px gray;
+}
+
+
+.showbutt {
+    border: 2px solid black;
+    box-shadow: 5px 5px gray
+}
