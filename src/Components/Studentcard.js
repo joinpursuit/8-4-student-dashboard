@@ -6,9 +6,9 @@ const Studentcard = ({ data }) => {
   //console.log(new Intl.DateTimeFormat('en-US', {dateStyle:'long'}).format(bday));
 
   const [moreInfo, setMoreInfo] = useState(false);
-  const handleInfo = () => setMoreInfo((prev) => !prev);
   const [graduate, setGraduate] = useState("");
   const [notes, setNotes] = useState(data.notes);
+  const handleInfo = () => setMoreInfo((prev) => !prev);
 
   const handleNotes = (e) => {
     e.preventDefault();
@@ -88,7 +88,9 @@ const Studentcard = ({ data }) => {
                 <h2>Certifications</h2>
                 <p>Resume: {data.certifications.resume ? "✅" : "❌"}</p>
                 <p>LinkedIn: {data.certifications.linkedin ? "✅" : "❌"}</p>
-                <p>Mock Interview: {data.certifications.github ? "✅" : "❌"}</p>
+                <p>
+                  Mock Interview: {data.certifications.github ? "✅" : "❌"}
+                </p>
                 <p>GitHub: {data.certifications.mockInterview ? "✅" : "❌"}</p>
               </div>
             </div>

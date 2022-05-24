@@ -22,7 +22,7 @@ const StudentList = ({ data, cohort }) => {
   //console.log(students);
   return (
     <div className="studentList">
-      <h2>{cohort}</h2>
+      <h2>{cohort.slice(0,-4)} {cohort.slice(-4)}</h2>
       <h4 className="totalStudents">Total Students: {students.length} </h4>
       {students.map((data) => {
         return <Studentcard data={data} key={data.id}/>;
