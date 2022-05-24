@@ -1,0 +1,72 @@
+.grid {
+    display: grid;
+    grid-template-areas:
+        "t t t"
+        "c s s";
+}
+
+.header {
+    grid-area: t;
+    text-align: center;
+    background-color: rgb(98, 98, 224);
+    color: white;
+    margin-top: 0px;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.cardContainer {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    grid-area: s;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+img {
+    float: left;
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(98, 98, 224);
+}
+
+.showMore {
+    margin-left: 120px;
+    border-radius: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.showMore:hover {
+    background-color: rgb(98, 98, 224);
+}
+.studentCard {
+    text-align: center;
+    border: 2px solid rgb(98, 98, 224);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.cList {
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.semester {
+    list-style: none;
+    border-bottom: 2px solid black;
+    padding:20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.cohortButton {
+    border:none;
+    background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    text-align: left;
+ }
+
+ .cohortButton:hover {
+     background-color: rgb(98, 98, 224);
+ }
