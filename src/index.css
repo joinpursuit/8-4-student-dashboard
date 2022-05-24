@@ -1,0 +1,87 @@
+.grid {
+  display: grid;
+  grid-template-areas:
+    "t t t t "
+    "t t t t "
+    "a a b b "
+    "a a b b ";
+  background-color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+.title {
+  grid-area: t;
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: verdana;
+  text-shadow: 1px 1px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4),
+    1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+.cohortsBttns {
+  margin: 20px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  border-radius: 24px;
+  border: none;
+  height: 40px;
+  width: 100px;
+  background: black;
+  color: white;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 4px rgb(57, 56, 56);
+}
+
+.students {
+  font-family: Verdana;
+}
+
+.studentCard {
+  font-family: sans-serif;
+  border: 3px solid black;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 5px;
+}
+
+.studentCard button {
+  border-radius: 20px;
+  cursor: pointer;
+  height: 30px;
+  font-size: 90%;
+  border: none;
+  
+}
+
+.showMore {
+  display: inline-block;
+}
+
+.CodeWars,
+.Scores,
+.Certs {
+  display: inline-table;
+  text-align: left;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.CodeWars {
+  margin-left: 0px;
+}
+
+.Certs {
+  margin-left: 50px;
+}
+.panelTitle {
+  font-family: Verdana;
+  margin-left: 10px;
+}
