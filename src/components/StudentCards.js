@@ -6,7 +6,7 @@ export default function StudentCards({ students }) {
 
 
   return (
-    <div>
+    <div className="CardWrap">
       {students.map((student) =>
         <StudentCard student={student} />
       )}

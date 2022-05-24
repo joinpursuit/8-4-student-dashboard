@@ -86,10 +86,7 @@ img {
     border-radius: 20px;
 }
 
-.ul{
-    height: 20PX;
-    overflow: auto; 
-}
+
 
 img {
     padding: 6px;
@@ -149,6 +146,13 @@ img:hover {
     margin-right: 20px;
     margin-left: 1px;
 }
+
+.CardWrap{
+    height: 505PX;
+    overflow: auto; 
+}
+
+
 
 .allButton {
     /*cohort handleClick button*/
