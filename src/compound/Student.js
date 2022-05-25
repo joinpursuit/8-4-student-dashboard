@@ -31,8 +31,7 @@ const Student = ({ student, names, certifications, cohort, codewars }) => {
       certifications.github
     ) {
       alert("CONGRATULATIONS");
-    }
-    if (
+    }else if (
       !certifications.resume &&
       !certifications.linkedin &&
       !certifications.mockInterview &&
@@ -41,38 +40,97 @@ const Student = ({ student, names, certifications, cohort, codewars }) => {
       alert(
         `To Proceed to Commencement, Please Complete:\n1. Resume\n2. LinkedIn\n3. Mock Interview \n4. GitHub`
       );
-    }
-    if (
+    }else if (
       !certifications.resume &&
       certifications.linkedin &&
       certifications.mockInterview &&
       certifications.github
     ) {
       alert(`You're almost there. You are missing:\n1. Resume`);
-    }
-    if (
+    }else if (
       certifications.resume &&
       !certifications.linkedin &&
       certifications.mockInterview &&
       certifications.github
     ) {
       alert(`You're almost there. You are missing:\n1. LinkedIn`);
-    }
-    if (
+    }else if (
       certifications.resume &&
       certifications.linkedin &&
       !certifications.mockInterview &&
       certifications.github
     ) {
       alert(`You're almost there. You are missing:\n1. Mock Interview`);
-    }
-    if (
+    }else if (
       certifications.resume &&
       certifications.linkedin &&
       certifications.mockInterview &&
       !certifications.github
     ) {
       alert(`You're almost there. You are missing:\n1. GitHub`);
+    }else if(
+      !certifications.resume &&
+      !certifications.linkedin &&
+      certifications.mockInterview &&
+      certifications.github
+    ){
+        alert(`Halfway there. You are missing:\n1. Resume\n2. LinkedIn`) 
+    }else if(
+      !certifications.resume &&
+      certifications.linkedin &&
+      !certifications.mockInterview &&
+      certifications.github
+    ){
+        alert(`Halfway there. You are missing:\n1. Resume\n2. Mock Interview`) 
+    }else if(
+      !certifications.resume &&
+      certifications.linkedin &&
+      certifications.mockInterview &&
+      !certifications.github
+    ){
+        alert(`Halfway there. You are missing:\n1. Resume\n2. GitHub`) 
+    }else if(
+      certifications.resume &&
+      !certifications.linkedin &&
+      !certifications.mockInterview &&
+      certifications.github
+    ){
+        alert(`Halfway there. You are missing:\n1. LinkedIn\n2. Mock Interview`) 
+    }else if(
+      certifications.resume &&
+      !certifications.linkedin &&
+      certifications.mockInterview &&
+      !certifications.github
+    ){
+        alert(`Halfway there. You are missing:\n1.LinkedIn\n2. GitHub`) 
+    }else if(
+      certifications.resume &&
+      certifications.linkedin &&
+      !certifications.mockInterview &&
+      !certifications.github
+    ){
+        alert(`Halfway there. You are missing:\n1. Mock Interview\n2. GitHub`) 
+    }else if(
+      !certifications.resume &&
+      !certifications.linkedin &&
+      !certifications.mockInterview &&
+      certifications.github
+    ){
+      alert(`To Proceed to Commencement, Please Complete:\n1. Resume\n2. LinkedIn\n3. Mock Interview`)
+    }else if(
+      !certifications.resume &&
+      !certifications.linkedin &&
+      certifications.mockInterview &&
+      !certifications.github
+    ){
+      alert(`To Proceed to Commencement, Please Complete:\n1. Resume\n2. LinkedIn\n3. GitHub`)
+    }else if(
+      certifications.resume &&
+      !certifications.linkedin &&
+      !certifications.mockInterview &&
+      !certifications.github
+    ){
+      alert(`To Proceed to Commencement, Please Complete:\n1. LinkedIn\n2. Mock Interview\n3. GitHub`)
     }
   };
 
