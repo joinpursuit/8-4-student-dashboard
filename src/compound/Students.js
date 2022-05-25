@@ -6,10 +6,13 @@ const Students = ({ studentsInfo }) => {
     <div className="allStudents">
       <h2>All Students</h2>
       <p>Total Students: {studentsInfo.length}</p>
-      {studentsInfo.map((student) => (
-        
-        <Student student={student} names = {student.names} certifications ={student.certifications} cohort = {student.cohort} codewars = {student.codewars} />
+     <div className = "students">
+        {studentsInfo.map((student) => (
+        <>
+          <Student student={student} names = {student.names} certifications ={student.certifications} cohort = {student.cohort} codewars = {student.codewars} />
+        </>
       ))}
+       </div>
     </div>
   );
 };

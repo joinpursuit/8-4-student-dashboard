@@ -7,13 +7,14 @@ const scheduleInfo = require("./data/scheduleData.json");
 
 function App() {
 const [classList,setClassList] = useState('AllStudents') 
+
   return (
     <div>
       <header>
         <h1>Student Dashboard</h1>
       </header>
       <main>
-        <ClassStartDates scheduleInfo={scheduleInfo}  SetClassList ={setClassList}/>
+        <ClassStartDates scheduleInfo={scheduleInfo} classList={classList} SetClassList ={setClassList}/>
         <Students studentsInfo={studentsInfo} />
       </main>
     </div>

@@ -9,6 +9,7 @@ img{
   grid-column: 1/1;
   width: 150px;
   height: 150px;
+  padding: left 100px;;
 }
 header{
   background-color:#699272;
@@ -25,7 +26,8 @@ span{
     text-decoration: underline;
 }
 .student{
-  grid-column: 2/4;
+  grid-column: 2/3;
+  padding-left: 20px
 }
 main{
   height: 750px;
@@ -37,16 +39,16 @@ li:hover{
   color:  #699272;
 }
 li{
-  padding: 15px;
+  padding: 13px;
   list-style: none;
-  text-decoration: underline;
+  text-decoration: blink;
 }
 .class{
   grid-column: 1/2;
 }
 .allStudents{
   grid-column: 2/4;
-  overflow:scroll
+
 }
 .more{
 
@@ -61,12 +63,15 @@ li{
 }
 .one{
   grid-column: 1/2;
+  text-align: center;
 }
 .two{
   grid-column: 2/3;
+  text-align: center;
 }
 .three{
   grid-column: 3/4;
+  text-align: center;
 }
 
 .list{
@@ -93,4 +98,42 @@ label{
 hr{
   margin-right: 50px;
   color: green;
+
+}
+
+.students{
+  overflow: scroll;
+  height: 600px;
+}
+
+form{
+  opacity: 0.50;
+  background-color: #699272;
+  width: 650px;
+  margin-left: 100px;
+  padding: 20px;
+}
+
+form button {
+  margin-left: 290px;
+  margin-top: 20px;
+}
+.graduationClass{
+  grid-column: 3/4;
+  color: green;
+  margin-left: 60px;
+  cursor:pointer;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.non-graduates{
+  grid-column: 3/4;
+  color: red;
+  margin-left: 60px;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
