@@ -1,23 +1,29 @@
 import React, { useState } from "react";
 // import ClassStartDate from "./ClassStartDate";
 
-const ClassStartDates = ({ scheduleInfo, setClassList, classList }) => {
+const ClassStartDates = ({ scheduleInfo, setClassList, classList, setStudentList, studentsInfo }) => {
+  //Handle Student Update
   const listOfClass = (e) => {
-    console.log(e);
-    const year = e.target.id;
-    console.log(year);
-
-    // console.log(scheduleInfo[1].replace(/" "/g, ""))
+    const value = e.target.id;
+    setClassList(value.split(' ').join(''))
+    const studentFilter = studentsInfo.filter((student)=>classList === student.cohort.cohortCode)
+    if(value === "AllStudents"){
+      setStudentList(studentsInfo)
+    }else{
+      setStudentList(studentFilter)
+    }
+    
   };
   return (
     <div className="class">
       <h2>Choose a Class by Start Date</h2>
       <h3 className="list">
         <ul>
-          <li>All Students</li>
+          <li id='AllStudents' onClick={(e)=>{
+            listOfClass(e)  
+          }}>All Students</li>
           <hr></hr>
           {scheduleInfo.map((startDate) => {
-            console.log(startDate);
             return (
               <>
                 <li

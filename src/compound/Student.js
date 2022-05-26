@@ -46,70 +46,70 @@ const Student = ({ student, names, certifications, cohort, codewars }) => {
       certifications.mockInterview &&
       certifications.github
     ) {
-      alert(`You're almost there. You are missing:\n1. Resume`);
+      alert(`You're almost there. To Proceed to Commencement, Please Complete::\n1. Resume`);
     }else if (
       certifications.resume &&
       !certifications.linkedin &&
       certifications.mockInterview &&
       certifications.github
     ) {
-      alert(`You're almost there. You are missing:\n1. LinkedIn`);
+      alert(`You're almost there. To Proceed to Commencement, Please Complete:\n1. LinkedIn`);
     }else if (
       certifications.resume &&
       certifications.linkedin &&
       !certifications.mockInterview &&
       certifications.github
     ) {
-      alert(`You're almost there. You are missing:\n1. Mock Interview`);
+      alert(`You're almost there. To Proceed to Commencement, Please Complete:\n1. Mock Interview`);
     }else if (
       certifications.resume &&
       certifications.linkedin &&
       certifications.mockInterview &&
       !certifications.github
     ) {
-      alert(`You're almost there. You are missing:\n1. GitHub`);
+      alert(`You're almost there. To Proceed to Commencement, Please Complete:\n1. GitHub`);
     }else if(
       !certifications.resume &&
       !certifications.linkedin &&
       certifications.mockInterview &&
       certifications.github
     ){
-        alert(`Halfway there. You are missing:\n1. Resume\n2. LinkedIn`) 
+        alert(`Halfway there. To Proceed to Commencement, Please Complete:\n1. Resume\n2. LinkedIn`) 
     }else if(
       !certifications.resume &&
       certifications.linkedin &&
       !certifications.mockInterview &&
       certifications.github
     ){
-        alert(`Halfway there. You are missing:\n1. Resume\n2. Mock Interview`) 
+        alert(`Halfway there. To Proceed to Commencement, Please Complete:\n1. Resume\n2. Mock Interview`) 
     }else if(
       !certifications.resume &&
       certifications.linkedin &&
       certifications.mockInterview &&
       !certifications.github
     ){
-        alert(`Halfway there. You are missing:\n1. Resume\n2. GitHub`) 
+        alert(`Halfway there. To Proceed to Commencement, Please Complete:\n1. Resume\n2. GitHub`) 
     }else if(
       certifications.resume &&
       !certifications.linkedin &&
       !certifications.mockInterview &&
       certifications.github
     ){
-        alert(`Halfway there. You are missing:\n1. LinkedIn\n2. Mock Interview`) 
+        alert(`Halfway there. To Proceed to Commencement, Please Complete:\n1. LinkedIn\n2. Mock Interview`) 
     }else if(
       certifications.resume &&
       !certifications.linkedin &&
       certifications.mockInterview &&
       !certifications.github
     ){
-        alert(`Halfway there. You are missing:\n1.LinkedIn\n2. GitHub`) 
+        alert(`Halfway there. To Proceed to Commencement, Please Complete:\n1.LinkedIn\n2. GitHub`) 
     }else if(
       certifications.resume &&
       certifications.linkedin &&
       !certifications.mockInterview &&
       !certifications.github
     ){
-        alert(`Halfway there. You are missing:\n1. Mock Interview\n2. GitHub`) 
+        alert(`Halfway there. To Proceed to Commencement, Please Complete:\n1. Mock Interview\n2. GitHub`) 
     }else if(
       !certifications.resume &&
       !certifications.linkedin &&

@@ -7,6 +7,7 @@ const scheduleInfo = require("./data/scheduleData.json");
 
 function App() {
 const [classList,setClassList] = useState('AllStudents') 
+const [studentList, setStudentList] = useState(studentsInfo)
 
   return (
     <div>
@@ -14,8 +15,8 @@ const [classList,setClassList] = useState('AllStudents')
         <h1>Student Dashboard</h1>
       </header>
       <main>
-        <ClassStartDates scheduleInfo={scheduleInfo} classList={classList} SetClassList ={setClassList}/>
-        <Students studentsInfo={studentsInfo} />
+        <ClassStartDates scheduleInfo={scheduleInfo} classList={classList} setClassList ={setClassList} setStudentList ={setStudentList} studentsInfo={studentsInfo}/>
+        <Students studentsInfo={studentList} classList ={classList}/>
       </main>
     </div>
   );
