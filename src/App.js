@@ -1,37 +1,17 @@
-import React, { useState } from "react";
-import "./index.css"
-import CardContainer from "./Components /CardContainer";
-import CohortList from "./Components /CohortList";
-import Form from "./Components /Form";
-const data = require("./data/data.json");
+import data from "./data/data.json";
+import AllStudentCards from "./Components/AllStudentCards"
+import CohortList from "./Components/CohortList";
+import { useState } from "react";
 
 function App() {
-  const [cohort, setCohort] = useState(data);
-  const [heading, setHeading] = useState("All Students");
-  const [comments, setComments] = useState(
-    data
-      .filter((student) => student.notes.length > 0)
-      .map((filteredStudent) => {
-        return {
-          commenter: filteredStudent.notes[0].commenter,
-          text: filteredStudent.notes[0].comment,
-        };
-      })
-  );
-
+  const [students, setStudents]= useState(data)
   return (
-    <div className="app">
-      <h1 className="title">Student Dashboard</h1>
-      <CohortList
-        data={data}
-        setCohort={setCohort}
-        cohort={cohort}
-        setHeading={setHeading}
-      />
-      <CardContainer data={cohort} setCohort={setCohort} heading={heading} />
-      <Form comments={comments} setComments={setComments}/>
+    <div>
+      <h1>Student Dashboard</h1>
+      <h1 className="header">Student Dashboard</h1>
+      <AllStudentCards students= {students} setStudents= {setStudents}/>
+      <CohortList students= {students} setStudents= {setStudents}/>
     </div>
   );
 }
-
 export default App;

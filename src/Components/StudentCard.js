@@ -1,89 +1,74 @@
-import { useState } from "react";
-const StudentCard = ({
-  names,
-  profilePhoto,
-  username,
-  dob,
-  certifications,
-  codewars,
-  cohort,
-}) => {
-  const [showMore, setShowMore] = useState(false);
+import { useState } from "react"
+const StudentCard = (props) => {
+    const [showMore,setShowMore]= useState(false)
 
-  const handleClick = () => {
-    showMore === false ? setShowMore(true) : setShowMore(false);
-  };
-
-  const show = () => {
-    if (showMore === true) {
-      return (
-        <div className="extra">
-          <section className="code">
-            <h3>
-              <span>CodeWars:</span>
-            </h3>
-            <p>Current Total: {codewars.current.total}</p>
-            <p>Last Week: {codewars.current.lastWeek}</p>
-            <p>Goal: {codewars.goal.total}</p>
-            <p>
-              Percentage of Goal Achieved:{" "}
-              {((codewars.current.total / codewars.goal.total) * 100).toFixed(
-                0
-              )}
-              %
-            </p>
+    const handleClick = () => {
+        if(showMore === false){
+setShowMore(true)
+        }else{
+            setShowMore(false)
+        }
+    }
+    debugger
+    const show = () => {
+        if(showMore === true){
+            return(
+            <div>
+          <section>
+            <h3><span>CodeWars:</span></h3>
+            <p>Current Total: {props.student.codewars.current.total}</p>
+            <p>Last Week: {props.student.codewars.current.lastWeek}</p>
+            <p>Goal: {props.student.codewars.goal.total}</p>
+            <p>Percentage of Goal Achieved: {((props.student.codewars.current.total/props.student.codewars.goal.total)*100).toFixed(0)}%</p>
           </section>
-          <section className="scores">
-            <h3>
-              <span>Scores:</span>
-            </h3>
-            <p>Assignments: {cohort.scores.assignments * 100}%</p>
-            <p>Projects: {cohort.scores.projects * 100}%</p>
-            <p>Assessments: {cohort.scores.assessments * 100}%</p>
+          <section>
+            <h3><span>Scores:</span></h3>
+            <p>Assignments: {(props.student.cohort.scores.assignments)*100}%</p>
+            <p>Projects: {(props.student.cohort.scores.projects)*100}%</p>
+            <p>Assessments: {(props.student.cohort.scores.assessments)*100}%</p>
           </section>
-          <section className="ceritifcation">
-            <h3>
-              <span>Certification:</span>
-            </h3>
-            <p>Resume: {certifications.resume ? "✓" : "x"}</p>
-            <p>LinkedIn: {certifications.linkedin ? "✓" : "x"}</p>
-            <p>Mock Interview: {certifications.mockInterview ? "✓" : "x"}</p>
-            <p>GitHub: {certifications.github ? "✓" : "x"}</p>
+          <section>
+            <h3><span>Certification:</span></h3>
+            <p>Resume: {props.student.certifications.resume ? "✅" : "❌"}</p>
+            <p>LinkedIn: {props.student.certifications.linkedin ? "✅" : "❌"}</p>
+            <p>Mock Interview: {props.student.certifications.mockInterview ? "✅" : "❌"}</p>
+            <p>GitHub: {props.student.certifications.github ? "✅" : "❌"}</p>
           </section>
         </div>
-      );
+      )
     }
-  };
+  }
 
-  const checkCert = () => {
-    if (
-      certifications.resume === true &&
-      certifications.linkedin === true &&
-      certifications.github === true &&
-      certifications.mockInterview === true
-    ) {
-      return <p className="grad">On track to Graduate</p>;
+  const certCheck = () => {
+    if(props.student.certifications.resume === true && props.student.certifications.linkedin === true && props.student.certifications.github === true && props.student.certifications.mockInterview === true){
+      return (
+        <p>On track to Graduate</p>
+      )
     }
-  };
+  }
 
-  return (
-    <div className="studentCard">
-      <img src={profilePhoto} width="50px"></img>
-      <h3>
-        Name: {`${names.preferredName} ${names.middleName} ${names.surname}`}
-      </h3>
-      <p>{checkCert()}</p>
-      <p>Email: {username}</p>
-      <p>Birthday: {dob}</p>
-      <br></br>
-      <button className="showMoreButton" onClick={handleClick}>
-        {show ? "Show less..." : "Show more..."}
-      </button>
-      <section>{show()}</section>
-    </div>
-  );
-};
 
-export default StudentCard;
+    console.log(props)
+    return(
+        <div>
+            <img className="studentPhoto" src = {props.student.profilePhoto} alt="Student"/>
+            <br></br>
+            <section className="studentCard">
+            <strong>
+            {props.student.names.preferredName} {props.student.names.middleName.charAt(0)}. {props.student.names.surname}
+            </strong>
+            <p>{certCheck()}</p>
+            <h4>{props.student.username}</h4>
+            <h4>Birthday: {props.student.dob}</h4>
+            <br></br>
+            <button onClick = {handleClick}>Show More...</button>
+            <section>{show()}</section>
 
-//useState(true) on Showmore buttonn
+            </section>
+
+
+        </div>
+    )
+
+}
+export default StudentCard
