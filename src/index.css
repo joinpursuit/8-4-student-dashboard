@@ -1,0 +1,11 @@
+.header{
+    text-align: center;
+    background-color: cyan;
+    opacity: 60%;
+}
+.studentPhoto{
+    width: 200px;
+} 
+p:hover, h1:hover, a:hover {
+    background-color: yellow;
+  }
