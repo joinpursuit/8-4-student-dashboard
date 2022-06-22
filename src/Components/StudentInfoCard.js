@@ -11,49 +11,29 @@ const StudentInfoCard = ({
   certifications,
 }) => {
   const [showText, setShowText] = useState(false);
-
   const [commenter, setCommenter] = useState("");
   const [Comment, setComment] = useState("");
-  
-  const handleCommenter = (e) => {
-    const {value} = e.target;
-    setCommenter(value)
-  }
-  
-  const handleComment= (e) => {
-    const {value} = e.target;
-    setComment(value)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!commenter || !Comment){
-        alert("fill out the form");
-    } else {
-        alert("Submit went through");
-    }
-  }
-
 
   const onClick = (e) => {
     setShowText(!showText);
 
-   if (e.target.textContent === "Show More" ) {
-    e.target.textContent= "Show Less"
-   } else {
-    e.target.textContent= "Show More"
-   }
+    if (e.target.textContent === "Show More") {
+      e.target.textContent = "Show Less";
+    } else {
+      e.target.textContent = "Show More";
+    }
   };
 
   const checkForGrad = (onTrackToGraduate) => {
-    if (onTrackToGraduate === "On Track to Graduate."){
-        return (<p  style={{ color: "green" }}>On Track to Graduate.</p>)
+    if (onTrackToGraduate === "On Track to Graduate.") {
+      return <p style={{ color: "green" }}>On Track to Graduate.</p>;
     } else {
-        return <p  style={{ color: "red" }}>Not On Track to Graduate.</p>
+      return <p style={{ color: "red" }}>Not On Track to Graduate.</p>;
     }
-};
+  };
 
   const Text = () => {
+   
     const TextColorChange = () => {
       if (
         ((codewars.current.total / codewars.goal.total) * 100).toFixed(0) > 100
@@ -101,7 +81,7 @@ const StudentInfoCard = ({
         );
       }
     };
-//HTML symbols from here https://www.toptal.com/designers/htmlarrows/symbols/heavy-multiplication-x/
+    //HTML symbols from here https://www.toptal.com/designers/htmlarrows/symbols/heavy-multiplication-x/
     const checkResume = () => {
       if (String(certifications.resume) === "true") {
         return <span>&#10003;</span>;
@@ -135,6 +115,28 @@ const StudentInfoCard = ({
     };
 
 
+    const handleCommenter = (e) => {
+        // const {value} = e.target;
+        setCommenter(e.target.value);
+      };
+  
+      const handleComment = (e) => {
+        const { value } = e.target;
+        setComment(value);
+      };
+  
+      const handleSubmit = (e) => {
+        e.preventDefault();
+  
+        if (!commenter || !Comment) {
+          alert("fill out the form");
+        } else {
+          alert("Submit went through");
+        }
+      };
+  
+
+
     return (
       <div>
         <h3>Codewars:</h3>
@@ -158,11 +160,30 @@ const StudentInfoCard = ({
         <div>
           <form onSubmit={handleSubmit}>
             <h3>1-on-1 Notes</h3>
-            <label>Commenter Name<input type="text" placeholder= "Your name" value={commenter} onChange={handleCommenter}/></label> 
-            <br/><br/>
-            <label>Comment <input type="text" placeholder="Comment" value={Comment} onChange={handleComment}/></label>
-            <br/><br/>
-            <button type="sumbit" >Add Note</button>
+            <label>
+              Commenter Name
+              <input
+                name="Commenter"
+                type="text"
+                placeholder="Your name"
+                value={commenter}
+                onChange={handleCommenter}
+              />
+            </label>
+            <br />
+            <br />
+            <label>
+              Comment{" "}
+              <input
+                type="text"
+                placeholder="Comment"
+                value={Comment}
+                onChange={handleComment}
+              />
+            </label>
+            <br />
+            <br />
+            <button type="sumbit">Add Note</button>
           </form>
         </div>
       </div>
