@@ -1,13 +1,23 @@
-import { useState }from "react";
+import React, { useState } from "react";
+import data from "./data/data"
+import StudentCard from "./StudentCard";
+// import MoreStudentDetails from "./MoreStudentDetails";
 
 const OneOnOneForm = () => {
-    const [commentatorName, setCommentatorName] = useState("");
-    const [comment, setComment] = useState("");
+    const [commentorName, setCommentorName] = useState("");
+    const [comment, setComment] = useState(data
+        .filter((student) => student.notes.length > 0)
+        .map((filteredStudent) => {
+          return {
+            commentorName: filteredStudent.notes[0].commentorName,
+            text: filteredStudent.notes[0].comment,
+          };
+        })
+    );
 
-
-    const handleCommentatorName = (e) => {
+    const handleCommentorName = (e) => {
         const { value } = e.target;
-        setCommentatorName(value);
+        setCommentorName(value);
     }
   
     const handleComment = (e) => {
@@ -17,8 +27,7 @@ const OneOnOneForm = () => {
 
         const handleSubmit = (e) => {
             const { value } = e.target;
-      
-           handleCommentatorName();
+           handleCommentorName();
            handleComment()
           }
 
@@ -27,12 +36,12 @@ return (
         <section className="notes-form">
         <h2>1-0n-1 Notes</h2>
         <form onSubmit={handleSubmit} >
-        <p>Commentator Name: <input
+        <p>Commentor Name: <input
             type="text"
-            name="commentatorName"
-            value={ commentatorName }
+            name="commentorName"
+            value={ commentorName }
             placeholder=""
-            onChange={ handleCommentatorName }
+            onChange={ handleCommentorName }
           /></p>
           <p>Comment: <input
             type="text"
@@ -42,20 +51,20 @@ return (
             onChange={ handleComment }
           /></p>
           <button type="submit">Add Note</button>
-        </form>
-       
+        </form>      
         <ul>
         <div className="notes">
               <li>
-             {commentatorName} says, "{comment}";
+             {commentorName} says, "{comment}";
+             {/* <Form comments={comments} setComments={setComments}/> */}
               </li>
               <br></br>
             </div>  
         </ul>
         </section>
     </div>
-)
+)}
 
-}
+
 
 export default OneOnOneForm;

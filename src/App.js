@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import StudentList from "./Components/StudentList.js";
 import CohortList from "./Components/CohortList.js";
+import data from "./data/data"
 
-const data = require("./data/data.json") 
 
 
 function App() {

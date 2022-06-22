@@ -1,9 +1,10 @@
 import { useState } from "react";
 import MoreStudentDetails from "./MoreStudentDetails";
+// import OneOnOneForm from "./OneOnOneForm";
 
 const StudentCard = ({ names, profilePhoto, username, dob }) => {
   let midNameInit = names.middleName.charAt(0);
-
+    // let dateOfBirth = dob.toLocaleDateString();
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -16,7 +17,11 @@ const StudentCard = ({ names, profilePhoto, username, dob }) => {
      <button onClick={() => {setShowMore(!showMore)}}> {showMore ? "show less..." : "show more..."}</button>
                   <br></br>
                   {showMore ? < MoreStudentDetails /> : null}
-                  <p className="student-card-end">___________________________</p>
+                  
+                  {/* < OneOnOneForm /> 
+                  {/* <button >1-on-1 Notes</button> */}
+         <br></br> 
+         <p className="student-card-end">___________________________</p>
                   <br></br>
     </div>
   );

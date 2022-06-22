@@ -1,43 +1,50 @@
 import React from "react";
+import StudentCard from "./StudentCard";
 
-import StudentList from "./StudentList";
-import OneOnOneForm from "./OneOnOneForm";
 
-const MoreStudentDetails = ({data, id, cohort, codewars, notes, certifications, scores}) => { 
-   
-    // console.log(data.codewars);
-//    let codewarsList = [...new Set(data.map((student) => student.codewars.current))];
-        
-    
-    // const percentOfGoal = ((codewars.current.value / codewars.goal.value)* 100).toFixed(2);
-    //     console.log(percentOfGoal);
-
-    //    const handleClick = (e) => {
-    //        const { value } = e.target
-    //        let seeOneOnOne = OneOnOneForm()
-    //        setOneOnOneForm()
-    //      }
+const MoreStudentDetails = ({
+  data, 
+  id, 
+  cohort, 
+  codewars, 
+  notes, 
+  certifications, 
+  scores}) => { 
+    const checkCert = () => {
+      if (
+        certifications.resume === true &&
+        certifications.linkedin === true &&
+        certifications.github === true &&
+        certifications.mockInterview === true
+      ) {
+        return <p className="grad">On track to Graduate</p>;
+      }
+    };
       
       return (
         <div className="moreDetails-card">
+            <p>{checkCert()}</p>
              <div className="codewars">
            <h3>
              Codewars: 
            </h3>
-           <p>Current Total: {}</p>
-           <p>Last Week: {}</p>
-           <p>Goal Total: {}</p>
-           <p>Percentage of Goal Achieved: {}</p>
-       
+           <p>Current Total: {codewars.current.total}</p>
+           <p>Last Week: {codewars.current.lastWeek}</p>
+           <p>Goal Total: {codewars.goal.total}</p>
+           <p>Percentage of Goal Achieved: {" "}
+              {((codewars.current.total / codewars.goal.total) * 100).toFixed(
+                0
+              )}
+              % </p>
            <br></br>        
            </div>
            <div className="scores">
            <h3>
              Scores:
            </h3>
-           <p>Assignments: {}</p>
-           <p>Projects: {}</p>
-           <p>Assessments: {}</p>
+           <p>Assignments: {cohort.scores.assignments * 100}% </p>
+           <p>Projects: {cohort.scores.projects * 100}% </p>
+           <p>Assessments: {cohort.scores.assessments * 100}% </p>
     
       
            <br></br>        
@@ -46,20 +53,17 @@ const MoreStudentDetails = ({data, id, cohort, codewars, notes, certifications, 
            <h3>
              Certifications:
            </h3>
-           <p>Resume: {}</p>
-           <p>LinkedIn: {}</p>
-           <p>Mock Interview: {}</p>
-           <p>GitHub: {}</p>
+           <p>Resume: {certifications.resume ? "✓" : "x"} </p>
+           <p>LinkedIn: {certifications.linkedin ? "✓" : "x"} </p>
+           <p>Mock Interview: {certifications.mockInterview ? "✓" : "x"} </p>
+           <p>GitHub: {certifications.github ? "✓" : "x"} </p>
   
          <br></br>        
-          </div>    
-           {/* <button onClick={() => {setShowMore(!showMore)}}> {showMore ? "show less..." : "show more..."}</button>
-                  <br></br> */}
-                  {/* {showMore ?  */}
-                  < OneOnOneForm /> 
-                {/* //   : null} */}
-         {/* <button >1-on-1 Notes</button> */}
-         <br></br>
+       </div>    
+         
+                  {/* < OneOnOneForm /> 
+
+         <br></br> */} 
         </div>
       );
     };

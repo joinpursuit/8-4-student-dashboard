@@ -48,10 +48,11 @@ li {
   width: 45%;
 }
 .notes-form {
-  float: left;
+  float: right;
   margin: 0 2.5% 0 0;
   width: 22.5%;
 }
+
 footer {
   clear: right;
 }
