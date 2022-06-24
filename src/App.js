@@ -1,22 +1,36 @@
 import React, { useState } from "react";
-import Cohart from "./Cohart";
-import Students from "./Students";
-import data from './data/data.json';
-// how do you import the data.json for the cohart useState???
-
+import "./index.css"
+import CardContainer from "./Components/CardContainer";
+import CohortList from "./Components/CohortList";
+import Form from "./Components/Form";
+const data = require("./data/data.json");
+// console.log(data)
 
 function App() {
-
-  const [cohart, setCohart] = useState([]);
-
-
-
+  const [cohort, setCohort] = useState(data);
+  const [heading, setHeading] = useState("All Students");
+  const [comments, setComments] = useState(
+    data
+      .filter((student) => student.notes.length > 0)
+      .map((filteredStudent) => {
+        return {
+          commenter: filteredStudent.notes[0].commenter,
+          text: filteredStudent.notes[0].comment,
+        };
+      })
+  );
 
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-      <Students></Students>
-      <Cohart></Cohart>
+    <div className="app">
+      <h1 className="title">Student Dashboard</h1>
+      <CohortList
+        data={data}
+        setCohort={setCohort}
+        cohort={cohort}
+        setHeading={setHeading}
+      />
+      <CardContainer data={cohort} setCohort={setCohort} heading={heading} />
+      <Form comments={comments} setComments={setComments}/>
     </div>
   );
 }
