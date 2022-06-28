@@ -8,8 +8,10 @@ const App = () => {
   const [title, setTitle] = useState('All Students');
   
   return (
-    <div className="App">
+    <div className='App'>
+      <div className='title'>
       <h1>Student Dashboard</h1>
+      </div>
       <StudentList data={list} title={title} />
       <CohortList data={data} setList={setList} setTitle={setTitle}/>
     </div>

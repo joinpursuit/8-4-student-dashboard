@@ -1,20 +1,42 @@
 .App{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.App h1{
-    /* grid-area:"t"; */
+/* .spooky{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.spooky button{
+    color: orange;
+} */
+
+.title{
     background-color: rgb(100, 142, 100);
     color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     padding: 30px;
     margin-top: 0px;
     grid-column-start: 1;
     grid-column-end: 4;
-    animation-name: slidein;
 }
+
+/* .dark-b{
+    border: none;
+    background: none;
+    color: white;
+    border-bottom: 1px dotted white;
+}
+
+.dark-b:hover{
+    color: black;
+    border-bottom-color: black;
+} */
 
 .card{
     border: 2px solid rgb(100, 142, 100);
@@ -27,13 +49,10 @@
     width: 115px;
     float: left;
     padding: 15px;
-    /* margin-right: 5px;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-right: 5px; */
     border-radius: 20px;
 }
 
+/* help from Dan */
 img:hover{
     transform: scale(1.15);
 }
@@ -67,6 +86,7 @@ img:hover{
     margin-right: 40px;
 }
 
+/* help from Kalilah */
 .wrapper{
     overflow: scroll;
     height: 400px;
