@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState } from "react";
 
 function Notes() {
   const [name, setName] = useState("");
@@ -22,7 +22,10 @@ function Notes() {
     if (!name && !comment) {
       alert(`Please fill in the Name and Comment fields`);
     } else {
-      setResult([...result, <li key={generateKey(name)}>{name + ` says,  "` + comment + `"`}</li>]);
+      setResult([
+        ...result,
+        <li key={generateKey(name)}>{name + ` says,  "` + comment + `"`}</li>,
+      ]);
       setName("");
       setComment("");
     }
@@ -33,15 +36,39 @@ function Notes() {
       <hr />
       <h3>1-on-1 notes</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Commenter Name
-          <input type="text" name="name" id="name" value={name} onChange={handleName} required /></label><br /><br />
-        <label htmlFor="comment">Comment
-          <input type="text" name="comment" id="comment" value={comment} onChange={handleComment} required /></label><br /><br />
-        <button className='NotesBtn' type="submit">Add Note</button>
+        <label htmlFor='name'>
+          Commenter Name
+          <input
+            type='text'
+            name='name'
+            id='name'
+            value={name}
+            onChange={handleName}
+            required
+          />
+        </label>
+        <br />
+        <br />
+        <label htmlFor='comment'>
+          Comment
+          <input
+            type='text'
+            name='comment'
+            id='comment'
+            value={comment}
+            onChange={handleComment}
+            required
+          />
+        </label>
+        <br />
+        <br />
+        <button className='NotesBtn' type='submit'>
+          Add Note
+        </button>
       </form>
       <ul>{result}</ul>
     </div>
-  )
+  );
 }
 
-export default Notes
+export default Notes;

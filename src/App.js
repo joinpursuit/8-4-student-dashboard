@@ -4,15 +4,17 @@ import Students from "./components/Students";
 import Data from "./data/data.json";
 
 function App() {
-  const initialSate = ([...Data]);
+  const initialSate = [...Data];
   const [studentsData, setStudentsData] = useState([...initialSate]);
   const [currentTitle, setCurrentTitle] = useState("All Students");
   const [showMore, setShowMore] = useState([]);
-  const [linkName, setLinkName] = useState(!showMore ? 'Show Less...' : 'Show More... ');
+  const [linkName, setLinkName] = useState(
+    !showMore ? "Show Less..." : "Show More... "
+  );
 
   return (
-    <div className="container">
-      <div className="Header">
+    <div className='container'>
+      <div className='Header'>
         <h1>Student Dashboard</h1>
       </div>
       <Cohort
@@ -32,7 +34,6 @@ function App() {
         currentTitle={currentTitle}
         setCurrentTitle={setCurrentTitle}
       />
-
     </div>
   );
 }
