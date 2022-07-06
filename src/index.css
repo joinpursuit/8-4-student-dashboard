@@ -32,7 +32,8 @@ img {
     grid-template-areas:
         "t t t t"
         "n n n l"
-        "c s s s";
+        "c s s s"
+        "b b f f";
 }
 
 .title {
@@ -205,3 +206,12 @@ button:hover {
     box-shadow: 2px 8px 4px rgb(153, 145, 250);
 }
 
+.sdbForm{
+    grid-area: f;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
+}

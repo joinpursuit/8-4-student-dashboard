@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import AllStudents from './components/AllStudents';
 import Cohorts from './components/Cohorts';
-import StudentCards from './components/StudentCards';
+import Form from './components/Form';
 import data from "./data/data"
+
 import './index.css';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <AllStudents students={cohort} heading={heading} setHeading={setHeading} />
       <Cohorts data={data} setCohort={setCohort} heading={heading} setHeading={setHeading} />
       <cardContainer data={data} />
+      <Form />
     </div>
   )
 }
