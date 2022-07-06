@@ -1,0 +1,18 @@
+#header {
+    text-align: center;
+    background-color: bisque;
+}
+
+#container {
+    text-align: center;
+    background-color: lightblue;
+    border: 2px dashed pink;
+}
+#showMore{
+background-color: aquamarine;
+
+}
+#cohortList {
+    background-color: lavender;
+    text-align: center;
+}
