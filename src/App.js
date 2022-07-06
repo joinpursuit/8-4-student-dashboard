@@ -13,6 +13,8 @@ function App() {
   return (
     <div id="header">
       <h1>Student Dashboard</h1>
+      <div id="stuff">
+
       <CohortList 
       data={data} 
       cohort={cohort} 
@@ -26,6 +28,8 @@ function App() {
       heading={heading}
       setHeading={setHeading}
       />
+      </div>
+
     </div>
   );
 }
