@@ -1,0 +1,77 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;1,100&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,h2,h3 {
+    color:#5e72e4;
+}
+
+code {
+  font-family: 'Poppins', sans-serif;
+}
+
+.cohort-list {
+  /* display: flex;
+    justify-content: space-between; */
+  list-style: none;
+}
+.nav-bar {
+  height: 100px;
+  width: 100%;
+  background-color: #5e72e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blanchedalmond;
+  
+}
+.side-bar {
+  float: right;
+  margin: 0 0 0 2.5%;
+  width: 22.5%;
+}
+li {
+    list-style: none;
+}
+.all-students {
+    list-style: none;
+}
+.allStudents-box {
+  float: right;
+  margin: 0 2.5%;
+  width: 45%;
+}
+.notes-form {
+  float: right;
+  margin: 0 2.5% 0 0;
+  width: 22.5%;
+}
+
+footer {
+  clear: right;
+}
+button {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #5e72e4;
+    color: blanchedalmond;
+}
+button:hover {
+    background-color: #213082;
+    transition:0.7s;
+}
+button:active {
+    background-color: blanchedalmond;
+    color: #5e72e4;
+}
+
+.student-card-end {
+    text-align: center;
+}
