@@ -1,0 +1,217 @@
+@media (min-width: 700px) {
+    .user-profile {
+      display: flex;
+
+    }
+  }
+
+@keyframes zoom {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+img {
+    animation-name: zoom;
+    animation-duration: s;
+}
+
+.showTitle{
+    color:#4141ea
+}
+
+.grid {
+    /*Self explanatory*/
+    background-color: white;
+    opacity: 0.0 - 0.2;
+    display: grid;
+    grid-template-areas:
+        "t t t t"
+        "n n n l"
+        "c s s s"
+        "b b f f";
+}
+
+.title {
+    /*Self explanatory*/
+    grid-area: t;
+    text-align: center;
+    background-color: #4142ea;
+    color: white;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+
+.Logo {
+    grid-area: l;
+    height: 50px;
+    width: 50px;
+    -moz-box-align: end;
+}
+
+
+.cardContainer {
+    /*Self explanatory*/
+    grid-area: s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.sCards {
+    border: 2px solid #4142ea;
+    padding: 10px;
+    margin: 6px;
+    color: rgb(8, 0, 94);
+
+}
+
+.sCards {
+    box-shadow: 0 0px 1px 0 rgba(100, 86, 255, 0.2);
+    transition: 0.3s;
+}
+
+.sCards:hover {
+    box-shadow: 0 2px 8px 0 rgb(0, 0, 0);
+}
+
+img {
+    /*Self explanatory*/
+    float: left;
+    height: 110px;
+    width: 110px;
+    border-radius: 20px;
+}
+
+
+
+img {
+    padding: 6px;
+    background-color: transparent;
+    transition: transform .2s;
+    height: 110px;
+    width: 110px;
+    margin: 0 auto;
+}
+
+img:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.cardInfo {
+    margin-left: 125px;
+    color:#000056;
+}
+
+.dash {
+    /*All Students heading in all Students*/
+    margin: 10px;
+    color:#000056;
+}
+
+
+.cohortL {
+    grid-area: c;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000056;;
+}
+
+.cohortL h2 {
+    text-align: center;
+}
+
+.cohortButton {
+    /*The main cohort button*/
+    border: none;
+    background-color: transparent;
+    opacity: 0.0 - 1.0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: #000056;
+    padding-right: 100px;
+}
+
+.cList {
+    /*<li> which wraps the main cohort button*/
+    border-bottom: 1.5px solid #4142ea;
+    list-style: none;
+    padding: 20px;
+    margin-right: 20px;
+    margin-left: 1px;
+}
+
+.CardWrap{
+    height: 505PX;
+    overflow: auto; 
+}
+
+
+
+.allButton {
+    /*cohort handleClick button*/
+    border: none;
+    background-color: transparent;
+    opacity: 0.0 - 1.0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+    padding-right: 100px;
+    text-decoration: underline;
+    color: #000056;
+}
+
+.count {
+    /*Student Counter below the All Students title above the cards*/
+    margin-left: 10px;
+    color:#000056
+}
+.Bname{
+    color: Red;
+    margin-left: 125px;
+}
+
+.showB {
+    /*Show More Button */
+    font-size: 12px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(64, 94, 64)
+}
+
+.parent {
+    /*Codewars, Scores, Certifications Show More Button  */
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 13px;
+}
+
+button {
+    box-shadow: 0 0px 0px 0 #4142ea;
+    ;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 2px 8px 0 rgb(0, 2, 128);
+    transform: scale(1.15);
+    box-shadow: 2px 8px 4px rgb(153, 145, 250);
+}
+
+.sdbForm{
+    grid-area: f;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
+}
