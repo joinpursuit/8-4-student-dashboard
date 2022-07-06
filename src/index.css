@@ -1,0 +1,32 @@
+#header {
+    text-align: center;
+}
+
+#container {
+    text-align: center;
+    background-color: lightblue;
+    border: 2px dashed pink;
+}
+#showMore{
+background-color: lightblue;
+
+}
+#cohortList {
+    background-color: lavender;
+    text-align: center;
+    height: 400px;
+}
+
+#cohortList button {
+    color: red;
+    padding: 5px;
+}
+
+#stuff {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.studentCard {
+    border: 2px dashed green;
+    padding: 3px;
+}
