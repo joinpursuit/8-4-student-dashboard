@@ -6,21 +6,21 @@ function StudentCard(props) {
 	const { username, dob, profilePhoto } = props.student;
 
 	return (
-		<div className="student-card">
+		<div className='student-card'>
 			<img
 				src={profilePhoto}
-				alt=""
-				width="200"
-				height="200"
-				className="student-card-image"
+				alt=''
+				width='200'
+				height='200'
+				className='student-card-image'
 			/>
-			<section className="student-info">
+			<section className='student-info'>
 				<h2>
 					{preferredName} {middleName[0]}. {surname}
 				</h2>
 				<p>{username}</p>
 				<p>
-					<span className="birthday">Birthday: </span>
+					<span className='birthday'>Birthday: </span>
 					{dob}
 				</p>
 			</section>

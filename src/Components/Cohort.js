@@ -3,26 +3,45 @@
 import React from 'react';
 import StudentCard from './StudentCard';
 
-import App from '../App';
-
 function Cohort(props) {
-	const { studentData, setStudents } = props;
-	console.log(studentData);
+	const {
+		studentData,
+		id,
+		setCohortName,
+		cohortName,
+		students,
+		cohortCode,
+		setStudents,
+	} = props;
+
+	console.log(props);
+	console.log(id);
+	console.log(cohortName);
+	console.log(students);
+
+	let newList = [
+		...new Set(studentData.map((student) => student.cohort.cohortCode)),
+	];
+	console.log(newList);
+
+	const handleClick = (cohortName) => {
+		setCohortName(cohortName);
+	};
 
 	return (
-		<React.Fragment>
+		<>
 			<h2>Choose a Class by Start Date</h2>
 
 			<ul>
 				<li>All Students</li>
 
-				{studentData.filter((student) => {
-					const { cohortCode } = student.cohort;
-					if (student === cohortCode)
-						return <li>{student.names.preferredName}</li>;
-				})}
+				{newList.map((cohortName) => (
+					<li key={studentData.id} onClick={() => handleClick(cohortName)}>
+						{cohortName}
+					</li>
+				))}
 			</ul>
-		</React.Fragment>
+		</>
 	);
 }
 

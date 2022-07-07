@@ -1,19 +1,22 @@
 /** @format */
 
 body {
-	margin: 20px;
+	margin: 0 auto;
+	font-family: sans-serif;
 }
 
 .student-card {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	border: 2px solid green;
-	width: 75%;
+	width: 100%;
 }
 
 .student-list {
 	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
+	width: 75%;
 }
 
 .student-card-image {
@@ -38,4 +41,15 @@ ul {
 
 li {
 	border-bottom: 2px solid green;
+	margin: 50px auto;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: azure;
+	background: olivedrab;
+	padding: 100px auto;
+	height: 150px;
 }
