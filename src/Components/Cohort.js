@@ -24,8 +24,12 @@ function Cohort(props) {
 	];
 	console.log(newList);
 
-	const handleClick = (cohortName) => {
+	const handleNameClick = (cohortName) => {
 		setCohortName(cohortName);
+	};
+
+	const handleAllStudentsClick = (studentData) => {
+		setStudents(studentData);
 	};
 
 	return (
@@ -36,7 +40,7 @@ function Cohort(props) {
 				<li>All Students</li>
 
 				{newList.map((cohortName) => (
-					<li key={studentData.id} onClick={() => handleClick(cohortName)}>
+					<li key={studentData.id} onClick={() => handleNameClick(cohortName)}>
 						{cohortName}
 					</li>
 				))}

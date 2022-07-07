@@ -21,23 +21,22 @@ export default function StudentList(props) {
 		(student) => student.cohort.cohortCode === cohortName
 	);
 
-
-	const handleChange = (students) => {
-		setStudents(students);
+	const handleChange = (e) => {
+		cohortName ? setStudents(result) : setStudents(students);
+		console.log(e.target.value);
 	};
 
 	return (
 		<div className='student-list'>
 			<h2>{cohortName}</h2>
-			<p>Total Students: {cohortName ? students.length : result.length}</p>
-			<div onChange={() => handleChange(students)}>
-				{cohortName ? students.map((student) => {
-					<StudentCard student={student} id={student.id} />
-				}) : result.map((student) => {
-					<StudentCard student={student} id={student.id} />
-				})}
+			<p>Total Students: {cohortName ? result.length : studentData.length}</p>
+			{result.map((student) => {
+				return (
+					<div onChange={() => handleChange(cohortName)}>
+						{<StudentCard student={student} id={student.id} />}
+					</div>
+				);
+			})}
 		</div>
-		)
-		}
-
-
+	);
+}

@@ -7,6 +7,7 @@ import studentData from './data/data.json';
 
 function App() {
 	const [students, setStudents] = useState(studentData);
+	const [result, setResult] = useState('');
 	const [cohortName, setCohortName] = useState('All Students');
 
 	return (
