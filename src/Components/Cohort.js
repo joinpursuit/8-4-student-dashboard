@@ -1,35 +1,17 @@
 /** @format */
 
 import React from 'react';
-import StudentCard from './StudentCard';
 
 function Cohort(props) {
-	const {
-		studentData,
-		id,
-		setCohortName,
-		cohortName,
-		students,
-		cohortCode,
-		setStudents,
-	} = props;
-
-	console.log(props);
-	console.log(id);
-	console.log(cohortName);
-	console.log(students);
+	const { studentData, setCohortName } = props;
 
 	let newList = [
 		...new Set(studentData.map((student) => student.cohort.cohortCode)),
 	];
 	console.log(newList);
 
-	const handleNameClick = (cohortName) => {
+	const handleCohortClick = (cohortName) => {
 		setCohortName(cohortName);
-	};
-
-	const handleAllStudentsClick = (studentData) => {
-		setStudents(studentData);
 	};
 
 	return (
@@ -40,7 +22,10 @@ function Cohort(props) {
 				<li>All Students</li>
 
 				{newList.map((cohortName) => (
-					<li key={studentData.id} onClick={() => handleNameClick(cohortName)}>
+					<li
+						key={studentData.id}
+						onClick={() => handleCohortClick(cohortName)}
+					>
 						{cohortName}
 					</li>
 				))}

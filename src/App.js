@@ -7,8 +7,10 @@ import studentData from './data/data.json';
 
 function App() {
 	const [students, setStudents] = useState(studentData);
-	const [result, setResult] = useState('');
 	const [cohortName, setCohortName] = useState('All Students');
+
+	console.log(studentData);
+	console.log(students);
 
 	return (
 		<div>
@@ -27,7 +29,6 @@ function App() {
 				setStudents={setStudents}
 				students={students}
 				cohortName={cohortName}
-				onChange={setStudents}
 			/>
 		</div>
 	);
