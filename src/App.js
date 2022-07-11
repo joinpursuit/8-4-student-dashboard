@@ -1,20 +1,23 @@
+import React, { useState } from "react";
+import "./index.css";
 import StudentList from "./Components/StudentList";
-import Cohort from "./Components/Cohort";
 import StudentCard from "./Components/StudentCard";
+import Cohort from "./Components/Cohort";
+import Nav from "./Components/Nav";
 import studentData from "./data/data.json";
-import {useState} from "react";
-function App() { 
-  const [students, setStudents] = useState(studentData);
-  console.log(studentData)
+
+function App() {
+
+const [ students, setStudents ] = useState(studentData)
+const [ cohortFilter, setCohortFilter ]  = useState('All Students')
+
   return (
-    <div>
-      <header>Student Dashboard</header>
+    <>
+      <Nav />
+      <Cohort studentData={studentData} cohortFilter={cohortFilter} setCohortFilter={setCohortFilter} students={students} setStudents={setStudents}/>
+      <StudentList studentData={studentData} cohortFilter={cohortFilter} setCohortFilter={setCohortFilter} students={students} setStudents={setStudents} StudentCard={<StudentCard />}/>
 
-      <Cohort/>
-      
-      <StudentList studentData={ students } />
-
-    </div>
+    </>
   );
 }
 
