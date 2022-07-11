@@ -1,6 +1,7 @@
 /** @format */
 import React, { useState } from 'react';
 import StudentList from './Components/StudentList';
+import StudentCard from './Components/StudentCard';
 import Cohort from './Components/Cohort';
 import Nav from './Components/Nav';
 import studentData from './data/data.json';
@@ -9,27 +10,30 @@ function App() {
 	const [students, setStudents] = useState(studentData);
 	const [cohortName, setCohortName] = useState('All Students');
 
-	console.log(studentData);
-	console.log(students);
+	const studentId = studentData.map((student) => student.id);
+
+	console.log(studentId);
 
 	return (
 		<div>
 			<Nav />
-			<Cohort
-				studentData={studentData}
-				id={studentData.id}
-				cohortName={cohortName}
-				setCohortName={setCohortName}
-				students={students}
-				setStudents={setStudents}
-				onClick={setCohortName}
-			/>
-			<StudentList
-				studentData={studentData}
-				setStudents={setStudents}
-				students={students}
-				cohortName={cohortName}
-			/>
+			<section className='dashboard-lists'>
+				<Cohort
+					studentData={studentData}
+					studentId={studentId}
+					cohortName={cohortName}
+					setCohortName={setCohortName}
+					students={students}
+					setStudents={setStudents}
+				/>
+				<StudentList
+					studentData={studentData}
+					setStudents={setStudents}
+					students={students}
+					cohortName={cohortName}
+					StudentCard={<StudentCard />}
+				/>
+			</section>
 		</div>
 	);
 }

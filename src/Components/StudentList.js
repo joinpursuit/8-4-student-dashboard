@@ -14,7 +14,8 @@ export default function StudentList(props) {
 
 	return (
 		<div className='student-list'>
-			<h2>{cohortName}</h2>
+			<h2>{cohortName === 'All Students' ? 'All Students' : cohortName}</h2>
+
 			<p>
 				Total Students:{' '}
 				{cohortName === 'All Students'
@@ -22,19 +23,19 @@ export default function StudentList(props) {
 					: cohortResult.length}
 			</p>
 			{cohortName === 'All Students'
-				? students.map((student) => {
+				? students.map((student, index) => {
 						return (
 							<div>
-								<StudentCard student={student} />
+								<StudentCard key={index} student={student} />
 							</div>
 						);
 				  })
 				: students
 						.filter((student) => student.cohort.cohortCode === cohortName)
-						.map((student) => {
+						.map((student, index) => {
 							return (
 								<div>
-									<StudentCard student={student} />
+									<StudentCard key={index} student={student} />
 								</div>
 							);
 						})}

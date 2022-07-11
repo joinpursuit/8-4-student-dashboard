@@ -5,18 +5,29 @@ body {
 	font-family: sans-serif;
 }
 
+.dashboard-lists {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
 .student-card {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	border: 2px solid green;
-	width: 100%;
+	width: 95%;
+	height: auto;
+	gap: 10px;
+	margin-right: 10px;
 }
 
 .student-list {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2 1fr);
 	gap: 10px;
-	width: 75%;
+	width: 65%;
 }
 
 .student-card-image {
@@ -25,23 +36,29 @@ body {
 }
 
 .student-info {
-	display: grid;
-
-	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	justify-content: left;
+	padding: 30px 50px;
 }
 
-.birthday {
+.student-details {
 	color: olivedrab;
+}
+
+.cohort-list {
+	width: 35%;
 }
 
 ul {
 	list-style-type: none;
-	width: 30%;
 }
 
-li {
+ul li {
 	border-bottom: 2px solid green;
 	margin: 50px auto;
+	width: 85%;
 }
 
 nav {
@@ -52,4 +69,22 @@ nav {
 	background: olivedrab;
 	padding: 100px auto;
 	height: 150px;
+}
+
+img {
+	padding: 25px auto;
+}
+
+.details-card {
+	display: flex;
+	gap: 20px;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.details-aside {
+	display: flex;
+	flex-direction: column;
+
+	gap: 20px 20px;
 }
