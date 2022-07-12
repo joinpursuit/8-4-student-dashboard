@@ -1,11 +1,13 @@
 /** @format */
 
 import React, { useState } from 'react';
+import StudentDetailsCard from './StudentDetailsCard';
 import '../index.css';
 
 function StudentCard(props) {
 	const { preferredName, middleName, surname } = props.student.names;
-	const { username, dob, profilePhoto } = props.student;
+	const { username, dob, profilePhoto, codewars, cohort, certifications } =
+		props.student;
 
 	const [show, setShow] = useState(false);
 
@@ -31,38 +33,24 @@ function StudentCard(props) {
 					<button className='btn' onClick={() => setShow(!show)}>
 						{show ? 'Show Less...' : 'Show More...'}
 					</button>
-					{show && <StudentDetailCard />}
+					{show && (
+						<StudentDetailsCard
+							codewarsTotal={codewars.current.total}
+							codewarsLastWeek={codewars.current.lastWeek}
+							codewarsGoalTotal={codewars.goal.total}
+							cohortScoresAssignments={cohort.scores.assignments}
+							cohortScoresProjects={cohort.scores.projects}
+							cohortScoresAssessments={cohort.scores.assessments}
+							certificationsResume={certifications.resume}
+							certificationsLinkedIn={certifications.linkedin}
+							certificationsGitHub={certifications.github}
+							certificationsMockInterview={certifications.mockInerview}
+						/>
+					)}
 				</h4>
 			</section>
 		</div>
 	);
 }
-
-const StudentDetailCard = () => {
-	return (
-		<div className='details-card'>
-			<aside className='details-aside'>
-				<h3>Codewars</h3>
-				<p className='student-details'>Current Total: </p>
-				<p className='student-details'>Last Week: </p>
-				<p className='student-details'>Goal: </p>
-				<p className='student-details'>Percent of Goal Achieved: </p>
-			</aside>
-			<aside className='details-aside'>
-				<h3>Scores</h3>
-				<p className='student-details'>Assignments: </p>
-				<p className='student-details'>Projects: </p>
-				<p className='student-details'>Assessments: </p>
-			</aside>
-			<aside className='details-aside'>
-				<h3>Certifications</h3>
-				<p className='student-details'>Resume: </p>
-				<p className='student-details'>LinkeIn: </p>
-				<p className='student-details'>Mock Interview: </p>
-				<p className='student-details'>GitHub: </p>
-			</aside>
-		</div>
-	);
-};
 
 export default StudentCard;

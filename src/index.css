@@ -47,6 +47,10 @@ body {
 	color: olivedrab;
 }
 
+.student-details-value {
+	color: black;
+}
+
 .cohort-list {
 	width: 35%;
 }
@@ -79,13 +83,13 @@ img {
 	display: flex;
 	gap: 20px;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-end;
+	align-items: baseline;
 }
 
 .details-aside {
-	display: flex;
-	flex-direction: column;
-
+	display: grid;
+	width: 100%;
 	gap: 20px 20px;
 }
 

@@ -3,14 +3,7 @@
 import React from 'react';
 
 function Cohort(props) {
-	const {
-		studentData,
-		students,
-		setCohortName,
-		cohortName,
-		setStudents,
-		studentId,
-	} = props;
+	const { studentData, setCohortName } = props;
 
 	const newList = [
 		...new Set(studentData.map((student) => student.cohort.cohortCode)),

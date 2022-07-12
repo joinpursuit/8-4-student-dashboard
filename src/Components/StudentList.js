@@ -7,6 +7,7 @@ import '../index.css';
 
 export default function StudentList(props) {
 	const { studentData, cohortName, students } = props;
+	console.log(props.student);
 
 	let cohortResult = students.filter(
 		(student) => student.cohort.cohortCode === cohortName
