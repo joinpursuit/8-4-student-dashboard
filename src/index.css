@@ -16,7 +16,7 @@ body {
 
 .student-card {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	/* flex-wrap: wrap; */
 	justify-content: space-around;
 	border: 2px solid green;
@@ -28,11 +28,6 @@ body {
 	background-color: rgb(219, 159, 139);
 }
 
-.student-info {
-	color: azure;
-	order: 1;
-}
-
 .student-list {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -42,17 +37,23 @@ body {
 	background-color: rgb(255, 238, 0);
 }
 
+.student-info {
+	color: azure;
+}
+
 .student-info-image {
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: repeat(3) 1fr;
 	padding: 25px;
 }
 
 .student-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: flex-start;
+	display: inline-grid;
+	grid-template-columns: 1fr;
+}
+
+.ontrack-graduate {
+	display: inline-grid;
 }
 
 .student-details {
@@ -151,10 +152,4 @@ nav {
 	color: rgb(252, 96, 56);
 	cursor: pointer;
 	transform: scale(1.05);
-}
-
-.ontrack-graduate {
-	top: 0;
-	right: 0;
-	order: 2;
 }

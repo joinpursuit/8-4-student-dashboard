@@ -22,8 +22,6 @@ function StudentCard(props) {
 			''
 		);
 
-	console.log();
-
 	return (
 		<div className='student-card'>
 			<section className='student-info-image'>
@@ -34,7 +32,6 @@ function StudentCard(props) {
 					height='150'
 				/>
 			</section>
-
 			<section className='student-info'>
 				<h2>
 					{preferredName} {middleName[0]}.{surname}
