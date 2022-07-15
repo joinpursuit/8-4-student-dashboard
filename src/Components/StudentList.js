@@ -15,19 +15,19 @@ export default function StudentList(props) {
 	return (
 		<div className='student-list'>
 			{cohortName === 'All Students' ? (
-				<h2>All Students</h2>
+				<h2 className='student-list-color'>All Students</h2>
 			) : (
-				<h2>
+				<h2 className='student-list-color'>
 					{cohortName.split(/[0-9]/g)} {cohortName.slice(-4)}
 				</h2>
 			)}
 
 			<p>
-				Total Students:{' '}
+				<span className='total-students-color'>Total Students: </span>
 				{cohortName === 'All Students' ? (
-					<span className='student-details'>{studentData.length}</span>
+					<span>{studentData.length}</span>
 				) : (
-					<span className='student-details'>{cohortResult.length}</span>
+					<span>{cohortResult.length}</span>
 				)}
 			</p>
 			{cohortName === 'All Students'

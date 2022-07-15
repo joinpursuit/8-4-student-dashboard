@@ -35,7 +35,6 @@ function App() {
 					StudentCard={<StudentCard />}
 				/>
 			</section>
-			{studentIds}
 		</div>
 	);
 }

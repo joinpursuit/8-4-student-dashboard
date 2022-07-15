@@ -32,7 +32,7 @@ function StudentCard(props) {
 					height='150'
 				/>
 			</section>
-			<section className='student-info'>
+			<section className='student-info student-info-color'>
 				<h2>
 					{preferredName} {middleName[0]}.{surname}
 				</h2>
@@ -42,30 +42,33 @@ function StudentCard(props) {
 					<span className='student-details'>Birthday: </span>
 					{dob}
 				</p>
-				<h4>
-					<button className='show-btn' onClick={() => setShow(!show)}>
-						{show ? 'Show Less...' : 'Show More...'}
-					</button>
-				</h4>
-				<aside className='ontrack-graduate'>{graduate}</aside>
 			</section>
-
-			<section className='show-more'>
-				{show && (
-					<StudentDetailsCard
-						codewarsTotal={codewars.current.total}
-						codewarsLastWeek={codewars.current.lastWeek}
-						codewarsGoalTotal={codewars.goal.total}
-						cohortScoresAssignments={cohort.scores.assignments}
-						cohortScoresProjects={cohort.scores.projects}
-						cohortScoresAssessments={cohort.scores.assessments}
-						certificationsResume={certifications.resume}
-						certificationsLinkedIn={certifications.linkedin}
-						certificationsGitHub={certifications.github}
-						certificationsMockInterview={certifications.mockInterview}
-					/>
-				)}
+			<section className='show-section'>
+				<section className='show-btn-section'>
+					<h4>
+						<button className='show-btn' onClick={() => setShow(!show)}>
+							{show ? 'Show Less...' : 'Show More...'}
+						</button>
+					</h4>
+				</section>
+				<section className='show-more'>
+					{show && (
+						<StudentDetailsCard
+							codewarsTotal={codewars.current.total}
+							codewarsLastWeek={codewars.current.lastWeek}
+							codewarsGoalTotal={codewars.goal.total}
+							cohortScoresAssignments={cohort.scores.assignments}
+							cohortScoresProjects={cohort.scores.projects}
+							cohortScoresAssessments={cohort.scores.assessments}
+							certificationsResume={certifications.resume}
+							certificationsLinkedIn={certifications.linkedin}
+							certificationsGitHub={certifications.github}
+							certificationsMockInterview={certifications.mockInterview}
+						/>
+					)}
+				</section>
 			</section>
+			<aside className='ontrack-graduate'>{graduate}</aside>
 		</div>
 	);
 }
