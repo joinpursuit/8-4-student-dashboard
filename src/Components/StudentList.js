@@ -7,7 +7,6 @@ import '../index.css';
 
 export default function StudentList(props) {
 	const { studentData, cohortName, students } = props;
-	console.log(props.student);
 
 	let cohortResult = students.filter(
 		(student) => student.cohort.cohortCode === cohortName
@@ -15,13 +14,21 @@ export default function StudentList(props) {
 
 	return (
 		<div className='student-list'>
-			<h2>{cohortName === 'All Students' ? 'All Students' : cohortName}</h2>
+			{cohortName === 'All Students' ? (
+				<h2>All Students</h2>
+			) : (
+				<h2>
+					{cohortName.split(/[0-9]/g)} {cohortName.slice(-4)}
+				</h2>
+			)}
 
 			<p>
 				Total Students:{' '}
-				{cohortName === 'All Students'
-					? studentData.length
-					: cohortResult.length}
+				{cohortName === 'All Students' ? (
+					<span className='student-details'>{studentData.length}</span>
+				) : (
+					<span className='student-details'>{cohortResult.length}</span>
+				)}
 			</p>
 			{cohortName === 'All Students'
 				? students.map((student, index) => {

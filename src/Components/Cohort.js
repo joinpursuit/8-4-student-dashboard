@@ -13,11 +13,6 @@ function Cohort(props) {
 		return a.toUpperCase() - b.toUpperCase();
 	});
 
-	console.log(sortList);
-
-	console.log(newList);
-	console.log(newList[newList.length - 4]);
-
 	const handleCohortClick = (cohortName) => {
 		setCohortName(cohortName);
 	};

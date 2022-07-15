@@ -11,43 +11,63 @@ function StudentCard(props) {
 
 	const [show, setShow] = useState(false);
 
+	const graduate =
+		codewars.current.total > 600 &&
+		certifications.resume &&
+		certifications.linkedin &&
+		certifications.github &&
+		certifications.mockInterview ? (
+			<p>On Track to Graduate</p>
+		) : (
+			''
+		);
+
+	console.log();
+
 	return (
 		<div className='student-card'>
-			<img
-				src={profilePhoto}
-				alt=''
-				width='200'
-				height='200'
-				className='student-card-image'
-			/>
+			<section className='student-info-image'>
+				<img
+					src={profilePhoto}
+					alt='student profile'
+					width='150'
+					height='150'
+				/>
+			</section>
+
 			<section className='student-info'>
 				<h2>
-					{preferredName} {middleName[0]}. {surname}
+					{preferredName} {middleName[0]}.{surname}
 				</h2>
+
 				<p>{username}</p>
 				<p>
 					<span className='student-details'>Birthday: </span>
 					{dob}
 				</p>
 				<h4>
-					<button className='btn' onClick={() => setShow(!show)}>
+					<button className='show-btn' onClick={() => setShow(!show)}>
 						{show ? 'Show Less...' : 'Show More...'}
 					</button>
-					{show && (
-						<StudentDetailsCard
-							codewarsTotal={codewars.current.total}
-							codewarsLastWeek={codewars.current.lastWeek}
-							codewarsGoalTotal={codewars.goal.total}
-							cohortScoresAssignments={cohort.scores.assignments}
-							cohortScoresProjects={cohort.scores.projects}
-							cohortScoresAssessments={cohort.scores.assessments}
-							certificationsResume={certifications.resume}
-							certificationsLinkedIn={certifications.linkedin}
-							certificationsGitHub={certifications.github}
-							certificationsMockInterview={certifications.mockInerview}
-						/>
-					)}
 				</h4>
+				<aside className='ontrack-graduate'>{graduate}</aside>
+			</section>
+
+			<section className='show-more'>
+				{show && (
+					<StudentDetailsCard
+						codewarsTotal={codewars.current.total}
+						codewarsLastWeek={codewars.current.lastWeek}
+						codewarsGoalTotal={codewars.goal.total}
+						cohortScoresAssignments={cohort.scores.assignments}
+						cohortScoresProjects={cohort.scores.projects}
+						cohortScoresAssessments={cohort.scores.assessments}
+						certificationsResume={certifications.resume}
+						certificationsLinkedIn={certifications.linkedin}
+						certificationsGitHub={certifications.github}
+						certificationsMockInterview={certifications.mockInterview}
+					/>
+				)}
 			</section>
 		</div>
 	);

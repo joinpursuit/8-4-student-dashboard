@@ -10,7 +10,8 @@ function App() {
 	const [students, setStudents] = useState(studentData);
 	const [cohortName, setCohortName] = useState('All Students');
 
-	const studentId = studentData.map((student) => student.id);
+	const studentId = studentData.map((student) => <li>{student.id}</li>);
+	const studentIds = <ul>{studentId}</ul>;
 
 	console.log(studentId);
 
@@ -34,6 +35,7 @@ function App() {
 					StudentCard={<StudentCard />}
 				/>
 			</section>
+			{studentIds}
 		</div>
 	);
 }

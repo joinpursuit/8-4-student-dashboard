@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React from 'react';
 
 function StudentDetailsCard({
 	codewarsTotal,
@@ -73,13 +73,13 @@ function StudentDetailsCard({
 					</span>
 				</p>
 				<p className='student-details'>
-					Mock Interview:{' '}
+					GitHub:{' '}
 					<span className='student-details-value'>
 						{certificationsGitHub ? <h4>&#x2705;</h4> : <h4>&#x274C;</h4>}
 					</span>
 				</p>
 				<p className='student-details'>
-					GitHub:{' '}
+					Mock Interview:{' '}
 					<span className='student-details-value'>
 						{certificationsMockInterview ? (
 							<h4>&#x2705;</h4>

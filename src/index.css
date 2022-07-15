@@ -1,8 +1,9 @@
 /** @format */
 
 body {
-	margin: 0 auto;
+	margin: 0;
 	font-family: sans-serif;
+	background-color: antiquewhite;
 }
 
 .dashboard-lists {
@@ -10,37 +11,48 @@ body {
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: flex-start;
+	gap: 30px;
 }
 
 .student-card {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	display: flex;
+	flex-direction: row;
+	/* flex-wrap: wrap; */
+	justify-content: space-around;
 	border: 2px solid green;
-	width: 95%;
+	width: 97%;
 	height: auto;
 	gap: 10px;
 	margin-right: 10px;
+	margin-bottom: 10px;
+	background-color: rgb(219, 159, 139);
+}
+
+.student-info {
+	color: azure;
+	order: 1;
 }
 
 .student-list {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(2 1fr);
-	gap: 10px;
 	width: 65%;
+	padding-left: 15px;
+	background-color: rgb(255, 238, 0);
 }
 
-.student-card-image {
-	display: grid;
-	margin: 20px;
+.student-info-image {
+	display: flex;
+	flex-direction: row;
+	padding: 25px;
 }
 
 .student-info {
 	display: flex;
 	flex-direction: column;
-	align-content: space-between;
-	justify-content: left;
-	padding: 30px 50px;
+	justify-content: space-around;
+	align-items: flex-start;
 }
 
 .student-details {
@@ -55,14 +67,32 @@ body {
 	width: 35%;
 }
 
-ul {
+.cohort-list h2 {
+	color: rgb(171, 104, 82);
+}
+
+.cohort-list ul {
 	list-style-type: none;
 }
 
-ul li {
+.cohort-list li {
+	color: rgb(171, 104, 82);
+	transition: all 0.4s ease;
+	transform: scale(1);
 	border-bottom: 2px solid green;
 	margin: 50px auto;
 	width: 85%;
+	padding: 5px 0px;
+}
+
+.cohort-list li:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	background-color: rgb(171, 104, 82);
+	color: azure;
+	padding: 5px;
+	box-sizing: content-box;
+	border-radius: 5px;
 }
 
 nav {
@@ -75,24 +105,56 @@ nav {
 	height: 150px;
 }
 
-img {
-	padding: 25px auto;
-}
-
 .details-card {
 	display: flex;
-	gap: 20px;
 	flex-direction: row;
-	justify-content: flex-end;
-	align-items: baseline;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	gap: 40px;
+	width: 100%;
+	margin: 20px;
 }
 
 .details-aside {
-	display: grid;
-	width: 100%;
-	gap: 20px 20px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.details-aside h3 {
+	color: rgb(0, 101, 7);
 }
 
 .cohort-list h2 {
 	text-align: center;
+}
+
+.show-more {
+	display: flex;
+	justify-content: space-around;
+	background-color: blanchedalmond;
+}
+
+.show-btn {
+	background-color: rgb(255, 238, 0, 0.7);
+	border-radius: 8px;
+	border: 2px outset lightcyan;
+	padding: 5px;
+	transition: all 0.4s ease;
+	transform: scale(1);
+	color: rgb(246, 141, 115);
+	text-shadow: 2px 2px 2px rgb(50, 50, 50, 0.4);
+}
+
+.show-btn:hover {
+	background-color: wheat;
+	color: rgb(252, 96, 56);
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+.ontrack-graduate {
+	top: 0;
+	right: 0;
+	order: 2;
 }
