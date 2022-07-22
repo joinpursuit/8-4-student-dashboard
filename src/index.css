@@ -1,0 +1,163 @@
+/** @format */
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background-color: antiquewhite;
+}
+
+.dashboard-lists {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+	gap: 30px;
+}
+
+.student-card {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: auto;
+	gap: 10px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	width: 95%;
+	background-color: rgb(219, 159, 139);
+}
+
+.show-section {
+	display: grid;
+	grid-column: 1 / span 3;
+	grid-row: 2;
+	margin: 20px;
+}
+
+.student-list {
+	display: grid;
+	width: 65%;
+	padding-left: 15px;
+	background-color: rgb(245, 245, 135);
+}
+
+.student-list-color {
+	color: rgb(0, 101, 7);
+}
+
+.student-info-image {
+	display: grid;
+	grid-column: 1;
+	padding: 25px;
+}
+
+.student-info {
+	display: grid;
+	grid-column: 2;
+}
+
+.ontrack-graduate,
+.student-info-color {
+	color: azure;
+}
+
+.ontrack-graduate {
+	display: grid;
+	grid-column: 3;
+	gap: 20px;
+	margin-right: 0;
+}
+
+.total-students-color,
+.student-details {
+	color: olivedrab;
+}
+
+.student-details-value {
+	color: black;
+}
+
+.cohort-list {
+	width: 35%;
+}
+
+.cohort-list h2 {
+	color: rgb(171, 104, 82);
+}
+
+.cohort-list ul {
+	list-style-type: none;
+}
+
+.cohort-list li {
+	color: rgb(171, 104, 82);
+	transition: all 0.4s ease;
+	transform: scale(1);
+	border-bottom: 2px solid green;
+	margin: 50px auto;
+	width: 85%;
+	padding: 5px 0px;
+}
+
+.cohort-list li:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	background-color: rgb(171, 104, 82);
+	color: azure;
+	padding: 5px;
+	box-sizing: content-box;
+	border-radius: 5px;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: azure;
+	background: olivedrab;
+	padding: 100px auto;
+	height: 150px;
+}
+
+.details-card {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 40px;
+	padding: 20px;
+}
+
+.details-aside h3 {
+	color: rgb(0, 101, 7);
+}
+
+.cohort-list h2 {
+	text-align: center;
+}
+
+.show-more {
+	background-color: blanchedalmond;
+}
+
+.show-btn-section {
+	display: grid;
+	grid-column: 1;
+	margin-left: 33.3%;
+}
+
+.show-btn {
+	background-color: rgb(255, 238, 0, 0.7);
+	border-radius: 8px;
+	border: 2px outset lightcyan;
+	padding: 5px;
+	transition: all 0.4s ease;
+	transform: scale(1);
+	color: rgb(246, 141, 115);
+	text-shadow: 2px 2px 2px rgb(50, 50, 50, 0.4);
+}
+
+.show-btn:hover {
+	background-color: wheat;
+	color: rgb(252, 96, 56);
+	cursor: pointer;
+	transform: scale(1.05);
+}
