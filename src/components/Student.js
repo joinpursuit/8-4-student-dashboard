@@ -37,7 +37,7 @@ function Student(props) {
       certifications.github &&
       codewars.current.total > 600
     ) {
-      return `On Track to Graduate`;
+      return <strong>On Track to Graduate</strong>;
     }
     return "";
   };
