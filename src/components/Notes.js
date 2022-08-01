@@ -37,7 +37,7 @@ function Notes() {
       <h3>1-on-1 notes</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor='name'>
-          Name
+          Name:
           <input
             type='text'
             name='name'
@@ -50,7 +50,7 @@ function Notes() {
         <br />
         <br />
         <label htmlFor='comment'>
-          Note
+          Note:
           <input
             type='text'
             name='comment'
