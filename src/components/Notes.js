@@ -50,7 +50,7 @@ function Notes() {
         <br />
         <br />
         <label htmlFor='comment'>
-          Comment
+          Note
           <input
             type='text'
             name='comment'
