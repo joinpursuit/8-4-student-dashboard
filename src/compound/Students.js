@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Student from "./Student";
 
 const Students = ({ studentsInfo, classList}) => {
