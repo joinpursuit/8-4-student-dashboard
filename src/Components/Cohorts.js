@@ -28,7 +28,7 @@ const Cohorts = ({data, setList, setTitle}) => {
 
     return noDups.map(code => {
         return (
-            <div className="cohort">
+            <div>
                 <li>
                    <button value={code} onClick={handleClick}>{formatCode(code)}</button>
                 </li>

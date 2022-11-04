@@ -39,7 +39,7 @@ const StudentDetails = ({student, comments, setComments}) => {
                 <p><span className="span">GitHub: </span>{student.certifications.github ? <FcCheckmark/> : <ImCross/>}</p>
             </section>
             <section className="line2"></section>
-            <Comments student={student} comment={comments} setComment={setComments}/>
+            <Comments student={student} comments={comments} setComments={setComments} />
         </div>
     )
 

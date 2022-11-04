@@ -12,7 +12,7 @@ const App = () => {
       <div className='title'>
       <h1>Student Dashboard</h1>
       </div>
-      <StudentList data={list} title={title} />
+      <StudentList data={list} title={title}/>
       <CohortList data={data} setList={setList} setTitle={setTitle}/>
     </div>
   );

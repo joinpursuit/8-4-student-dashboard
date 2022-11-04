@@ -5,13 +5,10 @@ const StudentCard = ({data}) => {
     const [show, setShow] = useState(false);
     //useState for comments here for every student
     //set it as an object not an array
-    const [comments, setComments] = useState({
-        commenter: "",
-        comment: ""
-    });
+    const [comments, setComments] = useState(data.notes);
 
     return (
-        <div className="card" id={data.id}>
+        <div className="card" >
             <img src={data.profilePhoto} alt={data.names.preferredName}/>
 
             <p className="graduate">{(data.certifications.resume && data.certifications.linkedin && data.certifications.mockInterview && data.certifications.github && data.codewars.current.total > 600) ? 'On Track to Graduate' : ''}</p>
@@ -24,7 +21,7 @@ const StudentCard = ({data}) => {
 
             <button onClick={() => setShow(!show)}>{show ? 'Show Less...' : 'Show More...'}</button>
 
-            {show ? <StudentDetails student={data} comments={comments} setComment={setComments}/> : null}
+            {show ? <StudentDetails student={data} comments={comments} setComments={setComments} /> : null}
         </div>
     )
 }
