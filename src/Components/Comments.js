@@ -1,15 +1,12 @@
 import AddNote from "./AddNote";
 
-const Comments = ({student, comment, setComment, commenter, setCommenter}) => {
-
-    // const handleCommenter = (e) =>{
-    //     const {value} = e.target;
-    //     setCommenter([...commenter, value])
+const Comments = ({student, comments, setComments}) => {
+    // const handleCommenter = (e) => {
+    //     commenter = e.target.value
     // }
 
-    // const handleComment = (e) =>{
-    //     const {value} = e.target;
-    //     setComment([...commenter, value])
+    // const handleComment = (e) => {
+    //     comment = e.target.value
     // }
 
     const handleSubmit = (e) => {
@@ -22,12 +19,12 @@ const Comments = ({student, comment, setComment, commenter, setCommenter}) => {
             <h4>1-on-1 Notes</h4>
             <form className="form" onSubmit={handleSubmit}>
                 <label>
-                    Commenter Name: <input type='text' className="name" value={commenter} />
+                    Commenter Name: <input type='text' className="name" value=""  />
                 </label>
                 <br/>
                 <br/>
                 <label>
-                    Comment: <input type='text' className="comment" value={comment}/>
+                    Comment: <input type='text' className="comment" value=""/>
                 </label>
                 <br/>
                 <br/>

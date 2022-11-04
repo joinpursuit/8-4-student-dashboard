@@ -5,8 +5,10 @@ const StudentCard = ({data}) => {
     const [show, setShow] = useState(false);
     //useState for comments here for every student
     //set it as an object not an array
-    const [commenter, setCommenter] = useState('');
-    const [comment, setComment] = useState('');
+    const [comments, setComments] = useState({
+        commenter: "",
+        comment: ""
+    });
 
     return (
         <div className="card" id={data.id}>
@@ -22,7 +24,7 @@ const StudentCard = ({data}) => {
 
             <button onClick={() => setShow(!show)}>{show ? 'Show Less...' : 'Show More...'}</button>
 
-            {show ? <StudentDetails student={data} comment={comment} setComment={setComment} commenter={commenter} setCommenter={setCommenter}/> : null}
+            {show ? <StudentDetails student={data} comments={comments} setComment={setComments}/> : null}
         </div>
     )
 }
