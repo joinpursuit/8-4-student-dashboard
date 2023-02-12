@@ -37,9 +37,9 @@ function Student(props) {
       certifications.github &&
       codewars.current.total > 600
     ) {
-      return <strong>On Track to Graduate</strong>;
+      return <div className='StudentStatus'>On Track to Graduate</div>;
     }
-    return "";
+    return;
   };
   const xIcon = <img className='xIcon' src={xicon} alt='x-icon'></img>;
   const tickIcon = <img className='tickIcon' src={tickicon} alt='x-icon'></img>;
@@ -76,13 +76,13 @@ function Student(props) {
           <p>GitHub: {certifications.github ? tickIcon : xIcon}</p>
         </div>
       </div>
-      <Notes />
+      <Notes studentId={id}/>
     </>
   );
   return (
     <div className='StudentProfile' key={id}>
       <img src={profilePhoto} alt='' />
-      <div className='StudentStatus'>{studentStatus()}</div>
+      {studentStatus()}
       <div className='Student'>
         <h4>
           {names.preferredName} {names.middleName.charAt(0)}. {names.surname}

@@ -1,31 +1,47 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 
-function Notes() {
+function Notes({studentId}) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [result, setResult] = useState([]);
+  const [displayComment, setDisplayComment] = useState([]);
+
+  useEffect(() => {
+    const storedComments = JSON.parse(localStorage.getItem(`comments_${studentId}`) || '[]');
+    if (storedComments.length > 0) {
+      setDisplayComment(storedComments);
+    }
+  }, [studentId]);
+  
+
+  useEffect(() => {
+    localStorage.setItem(`comments_${studentId}`, JSON.stringify(displayComment));
+  }, [studentId,displayComment]);
 
   const handleName = (e) => {
     const { value } = e.target;
     setName(value);
   };
+
   const handleComment = (e) => {
     const { value } = e.target;
     setComment(value);
   };
-  const generateKey = (pre) => {
-    return `${pre}_${new Date().getTime()}`;
+
+  const generateKey = () => {
+    return new Date().getTime();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name && !comment) {
+    if (!name || !comment) {
       alert(`Please fill in the Name and Comment fields`);
     } else {
-      setResult([
-        ...result,
-        <li key={generateKey(name)}>{name + ` says,  "` + comment + `"`}</li>,
-      ]);
+      const newComment = {
+        key: generateKey(),
+        name: name,
+        comment: comment
+      }
+      setDisplayComment([...displayComment, newComment]);
       setName("");
       setComment("");
     }
@@ -36,8 +52,7 @@ function Notes() {
       <hr />
       <h3>1-on-1 notes</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>
-          Name:
+        <label htmlFor='name'>Name:</label>
           <input
             type='text'
             name='name'
@@ -46,12 +61,11 @@ function Notes() {
             onChange={handleName}
             required
           />
-        </label>
-        <br />
-        <br />
-        <label htmlFor='comment'>
-          Note:
-          <input
+    
+        <label htmlFor='comment'>Note:</label>
+        <textarea
+            rows="5" 
+            cols="45"
             type='text'
             name='comment'
             id='comment'
@@ -59,14 +73,18 @@ function Notes() {
             onChange={handleComment}
             required
           />
-        </label>
-        <br />
-        <br />
+        
         <button className='NotesBtn' type='submit'>
           Add Note
         </button>
       </form>
-      <ul>{result}</ul>
+      <ul>
+        {displayComment.map(comment => (
+          <li key={comment.key}>
+            {comment.name} says, "{comment.comment}"
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

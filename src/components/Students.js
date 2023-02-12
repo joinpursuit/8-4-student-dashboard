@@ -3,7 +3,6 @@ import Student from "./Student";
 
 function Students({ studentsData, currentTitle }) {
   return (
-    <>
       <div className='Students'>
         <div className='TitleWidget'>
           <h2>{currentTitle}</h2>
@@ -11,15 +10,12 @@ function Students({ studentsData, currentTitle }) {
             Total Students: <span>{studentsData.length}</span>
           </div>
         </div>
-        {studentsData.map((student) => {
+        {studentsData.map((student, i) => {
           return (
-            <>
-              <Student student={student} />
-            </>
+            <Student key={i} student={student} />
           );
         })}
       </div>
-    </>
   );
 }
 
