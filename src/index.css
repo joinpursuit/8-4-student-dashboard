@@ -1,10 +1,11 @@
-
-
 input {
     padding: 2px;
     margin: 0 5px;
 }
-input[type=text],textarea, select {
+
+input[type=text],
+textarea,
+select {
     width: 50%;
     padding: 4px 10px;
     margin: 8px 0;
@@ -12,7 +13,7 @@ input[type=text],textarea, select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
 
 h2,
 h4 {
@@ -102,10 +103,11 @@ img:hover {
     justify-self: end;
     text-align: right;
     color: green;
+    font-weight: 600;
     width: fit-content;
     float: right;
     border: 2px dashed green;
-    padding:2px;
+    padding: 2px;
 }
 
 .ShowMoreLink {
@@ -147,8 +149,6 @@ img:hover {
     cursor: pointer;
 }
 
-
-
 .OneOnOne {
     padding: 0px;
     /*font-weight: bold;*/
@@ -160,8 +160,6 @@ img:hover {
     font-weight: bold;
 }
 
-
-
 .NotesBtn {
     display: block;
     background-color: rebeccapurple;
@@ -169,7 +167,6 @@ img:hover {
     color: white;
     width: 120px;
     font-weight: bolder;
-
 }
 
 hr {
@@ -206,14 +203,12 @@ hr {
 
     .StudentStatus {
         font-size: 14px;
-
     }
 
     .Cohort h2 {
         font-size: 20px;
     }
 }
-
 
 @media only screen and (max-width: 805px) {
 
@@ -238,16 +233,3 @@ hr {
     }
 
 }
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
-

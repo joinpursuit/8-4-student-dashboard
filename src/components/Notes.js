@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 
-function Notes({studentId}) {
+function Notes({ studentId }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [displayComment, setDisplayComment] = useState([]);
@@ -11,11 +11,11 @@ function Notes({studentId}) {
       setDisplayComment(storedComments);
     }
   }, [studentId]);
-  
+
 
   useEffect(() => {
     localStorage.setItem(`comments_${studentId}`, JSON.stringify(displayComment));
-  }, [studentId,displayComment]);
+  }, [studentId, displayComment]);
 
   const handleName = (e) => {
     const { value } = e.target;
@@ -50,30 +50,30 @@ function Notes({studentId}) {
   return (
     <div className='OneOnOne'>
       <hr />
-      <h3>1-on-1 notes</h3>
+      <h3>1-on-1 Notes</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor='name'>Name:</label>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            value={name}
-            onChange={handleName}
-            required
-          />
-    
+        <input
+          type='text'
+          name='name'
+          id='name'
+          value={name}
+          onChange={handleName}
+          required
+        />
+
         <label htmlFor='comment'>Note:</label>
         <textarea
-            rows="5" 
-            cols="45"
-            type='text'
-            name='comment'
-            id='comment'
-            value={comment}
-            onChange={handleComment}
-            required
-          />
-        
+          rows="5"
+          cols="45"
+          type='text'
+          name='comment'
+          id='comment'
+          value={comment}
+          onChange={handleComment}
+          required
+        />
+
         <button className='NotesBtn' type='submit'>
           Add Note
         </button>

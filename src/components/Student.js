@@ -76,7 +76,7 @@ function Student(props) {
           <p>GitHub: {certifications.github ? tickIcon : xIcon}</p>
         </div>
       </div>
-      <Notes studentId={id}/>
+      <Notes studentId={id} />
     </>
   );
   return (
