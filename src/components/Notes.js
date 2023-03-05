@@ -78,13 +78,14 @@ function Notes({ studentId }) {
           Add Note
         </button>
       </form>
+     <div className='NotesComments'>
       <ul>
         {displayComment.map(comment => (
           <li key={comment.key}>
             {comment.name} says, "{comment.comment}"
           </li>
         ))}
-      </ul>
+      </ul></div>
     </div>
   );
 }
