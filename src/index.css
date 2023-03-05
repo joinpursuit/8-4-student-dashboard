@@ -180,6 +180,43 @@ hr {
 
 /* Media Queries*/
 /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 320px) {
+
+    .container {
+        display: block;
+
+        gap: 20px 20px;
+        grid-template-areas:
+            "Header Header"
+            "Cohort Students"
+            "Cohort Students";
+    }
+
+    .Header h1 {
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .Header {
+        margin-bottom: 20px;
+    }
+
+    .TitleWidget {
+        text-align: center;
+        margin: 0 20px;
+    }
+
+    .StudentStatus {
+        font-size: 14px;
+    }
+
+    .Cohort h2 {
+        font-size: 20px;
+    }
+    .NotesComments {
+    width: 250px;
+}
+}
 @media only screen and (max-width: 500px) {
 
     .container {
