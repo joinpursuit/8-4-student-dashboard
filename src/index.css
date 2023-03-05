@@ -169,6 +169,12 @@ img:hover {
     font-weight: bolder;
 }
 
+.NotesComments {
+    width: 500px;
+}
+.NotesComments li{
+    margin: 15px;
+}
 hr {
     border-color: rebeccapurple;
 }
