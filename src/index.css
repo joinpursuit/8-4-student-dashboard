@@ -213,6 +213,9 @@ hr {
     .Cohort h2 {
         font-size: 20px;
     }
+    .NotesComments {
+    width: 350px;
+}
 }
 
 @media only screen and (max-width: 805px) {
