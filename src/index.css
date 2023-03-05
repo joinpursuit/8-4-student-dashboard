@@ -151,7 +151,6 @@ img:hover {
 
 .OneOnOne {
     padding: 0px;
-    /*font-weight: bold;*/
 }
 
 .OneOnOne form {
@@ -173,7 +172,7 @@ img:hover {
     width: 500px;
 }
 .NotesComments li{
-    margin: 15px;
+    margin: 20px 0;
 }
 hr {
     border-color: rebeccapurple;
